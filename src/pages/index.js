@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import HeadPage from '@/components/HeadPage/HeadPage';
+import LayoutPage from '@/components/LayoutPage/LayoutPage';
 
-const Home = () => <div>Home</div>;
+const Home = () => (
+  <Fragment>
+    <HeadPage>
+      <title>Unne | Inicio</title>
+    </HeadPage>
+
+    <LayoutPage></LayoutPage>
+  </Fragment>
+);
 
 export default Home;
