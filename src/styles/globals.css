@@ -3,25 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--font-poppins-regular: 'Poppins-regular';
+	--font-poppins-semobold: 'Poppins-semibold';
+	--font-poppins-bold: 'Poppins-bold';
+	--font-inter-regular: 'Inter-regular';
+	--font-bristone: 'Bristone';
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+	font-family: 'Poppins-regular';
+	src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+	font-family: 'Poppins-bold';
+	src: url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-poppins-regular);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-poppins-bold);
 }

@@ -6,16 +6,33 @@ const HeadingSection = ({ title, subtitle, alignment, className, color }) => {
 			case 'violet':
 				return 'text-violet-900';
 			case 'teal':
-				return 'bg-teal-500';
+				return 'text-teal-500';
 			default:
-				return 'bg-gray-100';
+				return 'text-gray-100';
+		}
+	};
+
+	const setAlignment = () => {
+		switch (alignment) {
+			case 'start':
+				return 'text-start';
+			case 'center':
+				return 'text-center';
+			case 'end':
+				return 'text-end';
+			default:
+				return 'text-center';
 		}
 	};
 
 	return (
-		<div className={alignment}>
-			<h2 className={`${className} ${renderClassColor}`}>{title}</h2>
-			<p>{subtitle}</p>
+		<div className={`${setAlignment()} mx-auto w-[95%] md:w-[90%] xl:w-[80%]`}>
+			<h2
+				className={`${className} ${renderClassColor()} uppercase text-2xl xl:text-4xl font-bold my-2 py-2 border-b-4 border-amber-400`}
+			>
+				{title}
+			</h2>
+			<p className="text-lg xl:text-xl text-gray-600 my-4">{subtitle}</p>
 		</div>
 	);
 };

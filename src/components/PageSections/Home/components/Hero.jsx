@@ -11,12 +11,14 @@ const Hero = () => (
 				<h1 className="text-2xl font-bold xl:text-5xl text-teal-500">
 					LA EVOLUCIÓN INMOBILIARIA A UN CLICK
 				</h1>
+
 				<span className="block mt-5 text-md xl:text-xl text-gray-800">
 					Desarrollamos software de gestión y las herramientas mas innovadoras
 					del mercado para optimizar el corretaje de propiedades
 				</span>
+
 				<div className="my-5">
-					<Button className=''>Más información </Button>
+					<Button>Más información </Button>
 				</div>
 			</div>
 			<div className="col-span-2">

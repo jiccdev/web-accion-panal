@@ -15,7 +15,7 @@ const Button = ({
 	loading,
 	onClick = () => {},
 }) => {
-	const CLASSES = ` ${color} relative h-auto uppercase inline-flex items-center justify-center rounded-lg transition-colors hover:bg-amber-600 ${fontSize} ${sizeClass} ${translate} ${className} `;
+	const CLASSES = ` ${color} relative h-auto uppercase inline-flex items-center justify-center rounded-lg transition-colors text-white hover:bg-amber-600 ${fontSize} ${sizeClass} ${translate} ${className} `;
 
 	if (!!href) {
 		return (
