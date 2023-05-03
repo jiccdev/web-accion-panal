@@ -51,3 +51,82 @@ export const digitalAgeCardData = [
 		icon: <SiFastly />,
 	},
 ];
+
+
+/* ABOUT SECTION */
+
+export const mainInfoAbout = [
+	{
+		title: 'Aportamos valor a la labor del corredor de propiedades junto a la innovación',
+		img: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683048443/Panal/image1.png',
+		children: [
+			{
+				id: 1,
+				strongName: 'Acción Panal',
+				name: 'nace de la necesidad de nuevas e innovadoras herramientas que ayuden a optimizar el corretaje inmobiliario. Creamos un proyecto que cree firmemente en la era digital y la evolucion del mercado inmobiliario en Chile.',
+			},
+			{
+				id: 2,
+				strongName: '',
+				name: 'Somos una empresa dedicada al desarrollo de Software y herramientas que van orientadas a la mejora del trabajo del corredor, creadas con inteligencia artificial y análisis de datos.',
+			},
+		],
+	}
+]
+
+export const statsClients = [
+	{
+		id: 1,
+		stats: 300,
+		title: 'Ejecutivos inmobiliarios trabajan con nosotros.',
+	},
+	{
+		id: 2,
+		stats: 7000,
+		title: 'Publicaciones en nuestra plataforma Panal.',
+	},
+	{
+		id: 3,
+		stats: 10000,
+		title: 'Visitas de clientes potenciales a nuestra plataforma.',
+	}
+]
+
+export const dataClientsCarousel = [
+	{
+		id: 1,
+		title: 'Banco de Chile',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BancoChile_rseopu.png',
+		href: 'https://portales.bancochile.cl/personas',
+	},
+	{
+		id: 2,
+		title: 'Banco Security',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/BANCOSECURITY_hs4t1l.png',
+		href: 'https://personas.bancosecurity.cl/',
+	},
+	{
+		id: 3,
+		title: 'BCI',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/bci_zefpfw.png',
+		href: 'https://www.bci.cl/personas',
+	},
+	{
+		id: 4,
+		title: 'Met Life',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/metlife_isrjth.png',
+		href: 'https://w3.metlife.cl/',
+	},
+	{
+		id: 5,
+		title: 'Banco Scotiabank',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/Scotiabank_nrdmel.png',
+		href: 'https://www.scotiabankchile.cl/',
+	},
+	{
+		id: 6,
+		title: 'Banco TrueCapital',
+		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
+		href: 'https://www.truecapital.cl/',
+	},
+];
