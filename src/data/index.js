@@ -52,7 +52,6 @@ export const digitalAgeCardData = [
 	},
 ];
 
-<<<<<<< HEAD
 /** HOME - SERVICIOS */
 
 export const servicesData = [
@@ -81,7 +80,6 @@ export const servicesData = [
 		src: '',
 	},
 ];
-=======
 
 /* ABOUT SECTION */
 
@@ -160,4 +158,3 @@ export const dataClientsCarousel = [
 		href: 'https://www.truecapital.cl/',
 	},
 ];
->>>>>>> 3b5e02308bcb23bae99e05635054ad8836826ebf
