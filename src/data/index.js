@@ -51,3 +51,32 @@ export const digitalAgeCardData = [
 		icon: <SiFastly />,
 	},
 ];
+
+/** HOME - SERVICIOS */
+
+export const servicesData = [
+	{
+		id: 1,
+		title: 'Software Inmobiliario',
+		subtitle: 'Panal',
+		desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas.',
+		href: '#panal-section',
+		src: '',
+	},
+	{
+		id: 2,
+		title: 'Sistema avanzado de canje',
+		subtitle: 'Yo canjeo',
+		desc: 'Sistema de canje basado en la inteligencia de datos, que te mostrara las unidades disponibles y optimizara el proceso para que sea efectivo.',
+		href: '#yo-canjeo-section',
+		src: '',
+	},
+	{
+		id: 3,
+		title: 'Desarrollo Web',
+		subtitle: 'Paginas Web',
+		desc: 'Desarrollo y diseño de sitios web responsives para corredores inmobiliarios, con la que podrás sincronizar tus publicaciones con nuestro integrador y hacer crecer tu marca.',
+		href: '#paginas-web-section',
+		src: '',
+	},
+];

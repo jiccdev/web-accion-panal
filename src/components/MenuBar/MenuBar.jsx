@@ -53,7 +53,7 @@ const MenuBar = () => {
     <Fragment>
       <button
         onClick={handleOpenMenu}
-        className="pl-2.5 rounded-lg text-neutral-700 dark:text-neutral-300 focus:outline-none flex items-center justify-center"
+        className="pl-2.5 rounded-lg text-neutral-700 focus:outline-none flex items-center justify-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

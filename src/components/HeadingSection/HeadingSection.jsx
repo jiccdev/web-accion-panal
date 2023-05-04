@@ -8,7 +8,7 @@ const HeadingSection = ({ title, subtitle, alignment, className, color }) => {
 			case 'teal':
 				return 'text-teal-500';
 			default:
-				return 'text-gray-100';
+				return 'text-black';
 		}
 	};
 
