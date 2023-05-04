@@ -19,7 +19,7 @@ import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import { IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowForward, IoClose } from 'react-icons/io';
 import { HiClipboard, HiClipboardCheck } from 'react-icons/hi';
 
 import {
@@ -31,7 +31,7 @@ import {
 	FaMapMarked,
 	FaMapMarkerAlt,
 } from 'react-icons/fa';
-import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
+import { BsFillTelephoneFill, BsSearch, BsFillPlayFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 import { BsFillHouseAddFill, BsFillGridFill } from 'react-icons/bs';
 import { BiBookOpen } from 'react-icons/bi';
@@ -90,4 +90,6 @@ export const iconsList = {
 	GoSearch,
 	MdSimCardDownload,
 	SiFastly,
+	BsFillPlayFill,
+	IoClose,
 };

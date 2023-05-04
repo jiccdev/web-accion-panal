@@ -8,6 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        pingLow: {
+          '0%': { transform: 'scale(.9)', opacity: '1' },
+          '100%': { transform: 'scale(1.2)', opacity: '0' },
+        }
+      },
+      animation: {
+        pingLow: 'pingLow 1.5s ease-in-out infinite',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
