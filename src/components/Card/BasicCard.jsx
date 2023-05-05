@@ -8,7 +8,6 @@ const BasicCard = ({ backgroundColor, data }) => {
       className={`${backgroundColor} ${styles.card} ${styles.education} md:h-56 xl:h-96 text-center py-6 px-4 my-5 xl:my-14 xl:mx-10 shadow-lg rounded-2xl cursor-pointer hover:shadow-xl trasition duration-300 ease-in-out`}
     >
       <div className={`${styles.overlay}`}></div>
-
       <span className="flex items-center justify-center my-4">
         <i className="text-5xl xl:text-8xl text-teal-500">{icon}</i>
       </span>
