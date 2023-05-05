@@ -12,7 +12,7 @@ const Clients = () => {
         <Section>
             <div>
                 <div className='border-b-2 border-panal-yellow'>
-                    <h2 className='uppercase text-center text-4xl text-panal-purple'>Alianzas Estratégicas</h2>
+                    <h2 className='uppercase text-center  text-2xl xl:text-4xl text-panal-purple'>Alianzas Estratégicas</h2>
                 </div>
 
                 <SplideCarousel
@@ -21,8 +21,8 @@ const Clients = () => {
                 />
             </div>
             <div className='mt-20'>
-                <div className='border-b-2 border-panal-yellow '>
-                    <h2 className='uppercase text-center text-4xl text-panal-purple'>Nuestros Clientes</h2>
+                <div className='border-b-2 border-panal-yellow mb-6 '>
+                    <h2 className='uppercase text-center text-2xl xl:text-4xl text-panal-purple'>Nuestros Clientes</h2>
                 </div>
                 <ReactSlickComponent
                     RenderComponent={CarouselCard}

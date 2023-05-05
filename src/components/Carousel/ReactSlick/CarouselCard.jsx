@@ -5,10 +5,10 @@ const CarouselCard = ({ item }) => {
     const { id, title, img, href } = item;
     return (
         <div
-            className={` flex justify-center items-center w-[95%] mx-auto rounded-[50px]`}
+            className={` flex justify-center items-center w-[95%] mx-auto rounded-[50px] `}
         >
             <div className="">
-                <div className="flex justify-center items-center mb-12 cursor-pointer">
+                <div className="flex justify-center items-center mb-12 cursor-pointer transition-all hover:scale-110">
                     <a href={href} target="_blank">
                         <Image
                             src={img}

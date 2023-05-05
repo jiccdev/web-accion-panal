@@ -68,7 +68,7 @@ const Demo = () => {
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900 flex justify-between items-center"
                                     >
-                                        <h3 className='ml-4'>Demo Video</h3>
+                                        Demo Video
                                         <button type="button" onClick={closeModal}>
                                             <p className='text-2xl flex items-center justify-center bg-panal-yellow transition-all duration-300 hover:bg-panal-orange text-white rounded-full w-8 h-8'>
                                                 X
@@ -82,9 +82,7 @@ const Demo = () => {
                                             src={urlVideo}
                                             title="Demo Video"
                                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                                            frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen
                                         ></iframe>
                                     </div>
                                 </Dialog.Panel>
