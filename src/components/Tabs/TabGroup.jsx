@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Tab } from '@headlessui/react';
 
 const TabGroup = ({ tabListData, tabPanel0, tabPanel1 }) => {
@@ -25,7 +25,6 @@ const TabGroup = ({ tabListData, tabPanel0, tabPanel1 }) => {
   return (
     <Tab.Group>
       <Tab.List>{renderedTabList}</Tab.List>
-
       <Tab.Panels>
         <Tab.Panel>{tabPanel0}</Tab.Panel>
         <Tab.Panel>{tabPanel1}</Tab.Panel>
