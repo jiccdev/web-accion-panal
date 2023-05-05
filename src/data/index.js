@@ -17,6 +17,23 @@ export const navigationData = [
 		id: 3,
 		name: 'Servicios',
 		href: '/#servicios-section',
+		children: [
+			{
+				id: 1,
+				name: 'Panal',
+				href: '/#panal-services',
+			},
+			{
+				id: 2,
+				name: 'Yo canjeo',
+				href: '/#yo-canjeo-services',
+			},
+			{
+				id: 3,
+				name: 'Página web',
+				href: '/#pagina-web-services',
+			},
+		],
 	},
 	{
 		id: 4,
@@ -158,4 +175,7 @@ export const dataClientsCarousel = [
 		img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
 		href: 'https://www.truecapital.cl/',
 	},
+
 ];
+];
+
