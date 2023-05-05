@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { UserContext } from './UserContext';
 
 const UserProvider = ({ children }) => {
-  const [basicDemos, setBasicDemos] = [];
-  const [advancedDemos, setAdvancedDemos] = [];
+  const [basicDemos, setBasicDemos] = useState([]);
+  const [advancedDemos, setAdvancedDemos] = useState([]);
   const [user, setUser] = useState({
     fullName: '',
     phone: '',
