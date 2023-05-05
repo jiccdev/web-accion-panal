@@ -5,16 +5,16 @@ import HomeComponent from '@/components/PageSections/Home/index.jsx';
 import AboutComponent from '@/components/PageSections/About/index.jsx';
 
 const Home = () => (
-	<>
-		<HeadPage>
-			<title>Unne | Inicio</title>
-		</HeadPage>
+  <>
+    <HeadPage>
+      <title>Acción Panal | Inicio</title>
+    </HeadPage>
 
-		<LayoutPage>
-			<HomeComponent />
-			<AboutComponent />
-		</LayoutPage>
-	</>
+    <LayoutPage>
+      <HomeComponent />
+      <AboutComponent />
+    </LayoutPage>
+  </>
 );
 
 export default Home;
