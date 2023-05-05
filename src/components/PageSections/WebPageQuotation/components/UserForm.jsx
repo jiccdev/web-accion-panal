@@ -4,19 +4,53 @@ import Button from '@/components/Button/Button';
 
 const UserForm = () => {
   const { contextData } = useContext(UserContext);
-  const [
-    user,
-    setUser,
-    basicDemos,
-    advancedDemos,
-    setBasicDemos,
-    setAdvancedDemos,
-  ] = contextData;
-  const [rangeValue, setRangeValue] = useState(0);
+  const [state, dispatch] = contextData;
 
-  const handleRangeChange = (value) => {
-    setRangeValue(value);
+  /** Handle Name change */
+  const handleNameChange = (ev) => {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        name: ev.target.value,
+      },
+    });
   };
+
+  /** Handle Phone change */
+  const handlePhoneChange = (ev) => {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        phone: ev.target.value,
+      },
+    });
+  };
+
+  /** Handle Email change */
+  const handleEmailChange = (ev) => {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        email: ev.target.value,
+      },
+    });
+  };
+
+  /** Handle Range change */
+  const handleRangeChange = (value) => {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        range: value,
+      },
+    });
+  };
+
+  console.log(state?.user);
 
   return (
     <form className="w-full bg-white p-5">
@@ -32,6 +66,8 @@ const UserForm = () => {
           type="text"
           id="name"
           name="name"
+          value={state?.user?.name}
+          onChange={handleNameChange}
           placeholder="Escriba su nombre"
         />
       </div>
@@ -48,6 +84,8 @@ const UserForm = () => {
           type="phone"
           id="phone"
           name="phone"
+          value={state?.user?.phone}
+          onChange={handlePhoneChange}
           placeholder="+569 8765 432"
         />
       </div>
@@ -64,6 +102,8 @@ const UserForm = () => {
           type="email"
           id="email"
           name="email"
+          value={state?.user?.email}
+          onChange={handleEmailChange}
           placeholder="ejemplo@gmail.com"
         />
       </div>
@@ -76,7 +116,7 @@ const UserForm = () => {
           <div className="flex justify-center space-x-4">
             <button
               className={`${
-                rangeValue === 1
+                state.user.range === 1
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
               } px-4 py-2 rounded-md`}
@@ -89,7 +129,7 @@ const UserForm = () => {
             </button>
             <button
               className={`${
-                rangeValue === 2
+                state.user.range === 2
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
               } px-4 py-2 rounded-md`}
@@ -102,7 +142,7 @@ const UserForm = () => {
             </button>
             <button
               className={`${
-                rangeValue === 3
+                state.user.range === 3
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
               } px-4 py-2 rounded-md`}
@@ -115,7 +155,7 @@ const UserForm = () => {
             </button>
             <button
               className={`${
-                rangeValue === 4
+                state.user.range === 4
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
               } px-4 py-2 rounded-md`}
@@ -129,11 +169,11 @@ const UserForm = () => {
           </div>
           <small className="mt-4 text-sm font-light text-gray-500">
             Has seleccionado el rango:{' '}
-            {rangeValue === 1
+            {state.user.range === 1
               ? '1-25'
-              : rangeValue === 2
+              : state.user.range === 2
               ? '25-50'
-              : rangeValue === 3
+              : state.user.range === 3
               ? '50-75'
               : '75-100'}
           </small>

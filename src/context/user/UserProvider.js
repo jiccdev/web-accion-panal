@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { UserContext } from './UserContext';
+import { reducer } from './reducer';
 
-const UserProvider = ({ children }) => {
-  const [basicDemos, setBasicDemos] = useState([]);
-  const [advancedDemos, setAdvancedDemos] = useState([]);
-  const [user, setUser] = useState({
-    fullName: '',
+const initialState = {
+  user: {
+    name: '',
     phone: '',
     email: '',
-  });
+    range: '',
+  },
+  basicDemos: [],
+  advancedDemos: [],
+};
+
+const UserProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <UserContext.Provider
       value={{
-        contextData: [
-          user,
-          setUser,
-          basicDemos,
-          advancedDemos,
-          setBasicDemos,
-          setAdvancedDemos,
-        ],
+        contextData: [state, dispatch],
       }}
     >
       {children}
