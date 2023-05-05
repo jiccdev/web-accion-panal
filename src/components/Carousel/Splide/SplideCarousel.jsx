@@ -9,7 +9,21 @@ const SplideCarousel = ({ data, RenderedComponent }) => {
                 options={{
                     rewind: true,
                     gap: '1rem',
-                    perPage: 3
+                    perPage: 3,
+                    breakpoints: {
+                        1024: {
+                            perPage: 3,
+
+                        },
+                        767: {
+                            perPage: 2,
+
+                        },
+                        640: {
+                            perPage: 1,
+
+                        },
+                    },
                 }}
             >
                 {data.map((demo) => (

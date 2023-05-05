@@ -7,14 +7,14 @@ const SplideSlideComponent = ({ demo }) => {
     return (
         <SplideSlide>
             <div className="w-full px-4 py-0">
-                <div className="flex items-center justify-center">
-                    <a href={href} target="_blank">
+                <div className="flex items-center justify-center ">
+                    <a href={href} target="_blank" className='cursor-pointer transition-all hover:scale-110'>
                         <Image
                             src={img}
                             alt={`img-demo-${name}`}
                             height={200}
                             width={100}
-                            className="h-[120px] max-h-[250px] object-cover w-full rounded-xl mb-2"
+                            className=" xl:h-[120px] max-h-[250px] object-cover w-full rounded-xl mb-2"
                         />
                     </a>
                 </div>

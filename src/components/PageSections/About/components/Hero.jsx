@@ -14,7 +14,7 @@ const Hero = () => {
 					<HeroInfo key={ev.id} data={ev} />
 				))}
 			{/* Bottom section */}
-			<div className='flex flex-wrap justify-center items-center gap-10 my-10'>
+			<div className='flex flex-wrap justify-center items-center gap-5 xl:gap-10 my-10'>
 				{statsClients?.length > 0 &&
 					statsClients?.map((ev) => (
 						<StatsCard key={ev.id} data={ev} />
