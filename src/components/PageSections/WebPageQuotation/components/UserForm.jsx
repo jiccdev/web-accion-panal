@@ -70,13 +70,14 @@ const UserForm = () => {
     ev.preventDefault();
 
     // ✅
-    // if (Object.values(state?.user).includes('') || state.user.terms === false) {
-    //   setErrorMsg({
-    //     allFieldRequierd:
-    //       'Por favor, completa todos los campos y acepta los terminos y condiciones',
-    //   });
-    //   return;
-    // }
+    if (Object.values(state?.user).includes('') || state.user.terms === false) {
+      setErrorMsg({
+        allFieldRequierd:
+          'Por favor, completa todos los campos y acepta los terminos y condiciones',
+      });
+      return;
+    }
+
     dispatch({
       type: 'CREATE_VALIDATION_USER_CODE',
       payload: {
@@ -85,10 +86,12 @@ const UserForm = () => {
     });
 
     // ✅
-    // setErrorMsg({
-    //   allFieldRequierd: '',
-    // });
+    setErrorMsg({
+      allFieldRequierd: '',
+    });
   };
+
+  console.log('desde personal data', state.validationCode.uniqueCode);
 
   return (
     <form onSubmit={onFormSubmit} className="w-full bg-white p-5">

@@ -8,7 +8,6 @@ const UserEmailValidation = () => {
   const { contextData } = useContext(UserContext);
   const [state] = contextData;
   const [inputValues, setInputValues] = useState(['', '', '', '']);
-  const [verificationCode, setVerificationCode] = useState('');
   const [validationCodeErrorMsg, setValidationCodeErrorMsg] = useState('');
   const [validateCodeBtn, setValidateCodeBtn] = useState(true);
   const [sendRequestBtn, setSendRequestBtn] = useState(false);
@@ -53,11 +52,13 @@ const UserEmailValidation = () => {
 
   console.log(state.validationCode.uniqueCode);
 
+  console.log(state.user);
+
   return (
     <div className="bg-white p-5">
       <div className="mb-5 text-center">
         <small className="text-sm font-light text-gray-500">
-          Ingresa el código de verificación
+          Ingresa el código de verificación{' '}
         </small>
       </div>
 
@@ -140,6 +141,14 @@ const UserEmailValidation = () => {
           )}
         </div>
 
+        <div className="mb-5 text-center">
+          <small className="text-sm font-light text-gray-500">
+            <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+              Revisa tu bandeja de entrada
+            </span>
+          </small>
+        </div>
+
         {validateCodeBtn && (
           <div className="flex items-center justify-center mt-10">
             <Button onClick={onValidateClick}>Validar código</Button>
@@ -148,7 +157,7 @@ const UserEmailValidation = () => {
 
         {sendRequestBtn && (
           <div className="flex items-center justify-center mt-10">
-            <Link href="/">
+            <Link href="/web-demos">
               <Button
                 onClick={onValidateClick}
                 className="flex items-center justify-center"

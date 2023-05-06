@@ -33,7 +33,11 @@ import {
 } from 'react-icons/fa';
 import { BsFillTelephoneFill, BsSearch, BsFillPlayFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
-import { BsFillHouseAddFill, BsFillGridFill } from 'react-icons/bs';
+import {
+  BsFillHouseAddFill,
+  BsFillGridFill,
+  BsFillInboxFill,
+} from 'react-icons/bs';
 import { BiBookOpen, BiPaperPlane } from 'react-icons/bi';
 import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
@@ -93,4 +97,5 @@ export const iconsList = {
   BsFillPlayFill,
   IoClose,
   BiPaperPlane,
+  BsFillInboxFill,
 };
