@@ -1,15 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '@/context/user/UserContext';
 import Button from '@/components/Button/Button';
+import Alert from '@/components/Alert/Alert';
 import { generateValidationCode } from '@/utils';
 
 const UserForm = () => {
   const { contextData } = useContext(UserContext);
   const [state, dispatch] = contextData;
-  const [showErrorMsg, setShowErrorMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState({
     allFieldRequierd: '',
-    acceptTerms: '',
   });
 
   /** Handle Name change */
@@ -70,40 +69,25 @@ const UserForm = () => {
   const onFormSubmit = (ev) => {
     ev.preventDefault();
 
-    if (Object.values(state?.user).includes('')) {
-      setShowErrorMsg(true);
-      setErrorMsg({
-        allFieldRequierd: 'Todos los campos son obligatorios',
-      });
-    }
-
-    if (state?.user.terms === false) {
-      setShowErrorMsg(true);
-      setErrorMsg({
-        acceptTerms: 'Debes aceptar terminos y condiciones',
-      });
-    }
-
+    // ✅
+    // if (Object.values(state?.user).includes('') || state.user.terms === false) {
+    //   setErrorMsg({
+    //     allFieldRequierd:
+    //       'Por favor, completa todos los campos y acepta los terminos y condiciones',
+    //   });
+    //   return;
+    // }
     dispatch({
       type: 'CREATE_VALIDATION_USER_CODE',
       payload: {
         uniqueCode: generateValidationCode(),
       },
     });
-    // Object.values(state?.user).includes('')
-    //   ? setErrorMsg({
-    //       allFieldRequierd: 'Todos los campos son obligatorios',
-    //     })
-    //   : state?.user.terms === false
-    //   ? setErrorMsg({
-    //       acceptTerms: 'Debes aceptar terminos y condiciones',
-    //     })
-    //   : dispatch({
-    //       type: 'CREATE_VALIDATION_USER_CODE',
-    //       payload: {
-    //         uniqueCode: generateValidationCode(),
-    //       },
-    //     });
+
+    // ✅
+    // setErrorMsg({
+    //   allFieldRequierd: '',
+    // });
   };
 
   return (
@@ -164,7 +148,9 @@ const UserForm = () => {
         />
       </div>
 
-      <p>{errorMsg.allFieldRequierd}</p>
+      {errorMsg.allFieldRequierd && (
+        <Alert errorMsg={errorMsg.allFieldRequierd} />
+      )}
 
       <div className="my-8">
         <div className="flex flex-col items-center">
@@ -254,8 +240,6 @@ const UserForm = () => {
           de privacidad
         </label>
       </div>
-
-      <p>{errorMsg.acceptTerms}</p>
 
       <div className="mt-8 flex justify-center">
         <Button type="submit">Enviar</Button>

@@ -10,7 +10,7 @@ const TabGroup = ({ tabListData, tabPanel0, tabPanel1 }) => {
         className={`${
           selectedTab === idx ? 'bg-violet-900 text-white' : 'bg-violet-100'
         } w-[50%] p-2 xl:p-3`}
-        disabled={selectedTab !== idx}
+        // disabled={selectedTab !== idx}
       >
         <div className="flex items-center justify-center">
           <span className="mr-2 w-7 h-7 rounded-full bg-violet-500 text-white flex items-center justify-center">
