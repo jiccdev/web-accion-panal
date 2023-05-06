@@ -9,8 +9,8 @@ const initialState = {
     email: '',
     range: 1,
     terms: false,
-    authUser: [],
   },
+  authUser: [],
   validationCode: {
     uniqueCode: undefined,
   },
