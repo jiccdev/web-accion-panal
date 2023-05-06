@@ -1,10 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '@/context/user/UserContext';
 import Button from '@/components/Button/Button';
+import { generateValidationCode } from '@/utils';
 
 const UserForm = () => {
   const { contextData } = useContext(UserContext);
   const [state, dispatch] = contextData;
+  const [showErrorMsg, setShowErrorMsg] = useState(false);
+  const [errorMsg, setErrorMsg] = useState({
+    allFieldRequierd: '',
+    acceptTerms: '',
+  });
 
   /** Handle Name change */
   const handleNameChange = (ev) => {
@@ -50,10 +56,58 @@ const UserForm = () => {
     });
   };
 
-  console.log(state?.user);
+  /** Handle Terms and Conditions change */
+  const handleTermsChange = (ev) => {
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        terms: ev.target.checked,
+      },
+    });
+  };
+
+  const onFormSubmit = (ev) => {
+    ev.preventDefault();
+
+    if (Object.values(state?.user).includes('')) {
+      setShowErrorMsg(true);
+      setErrorMsg({
+        allFieldRequierd: 'Todos los campos son obligatorios',
+      });
+    }
+
+    if (state?.user.terms === false) {
+      setShowErrorMsg(true);
+      setErrorMsg({
+        acceptTerms: 'Debes aceptar terminos y condiciones',
+      });
+    }
+
+    dispatch({
+      type: 'CREATE_VALIDATION_USER_CODE',
+      payload: {
+        uniqueCode: generateValidationCode(),
+      },
+    });
+    // Object.values(state?.user).includes('')
+    //   ? setErrorMsg({
+    //       allFieldRequierd: 'Todos los campos son obligatorios',
+    //     })
+    //   : state?.user.terms === false
+    //   ? setErrorMsg({
+    //       acceptTerms: 'Debes aceptar terminos y condiciones',
+    //     })
+    //   : dispatch({
+    //       type: 'CREATE_VALIDATION_USER_CODE',
+    //       payload: {
+    //         uniqueCode: generateValidationCode(),
+    //       },
+    //     });
+  };
 
   return (
-    <form className="w-full bg-white p-5">
+    <form onSubmit={onFormSubmit} className="w-full bg-white p-5">
       <div className="mb-4">
         <label
           className="block text-gray-500 text-sm font-ligth mb-2"
@@ -66,6 +120,7 @@ const UserForm = () => {
           type="text"
           id="name"
           name="name"
+          maxLength={50}
           value={state?.user?.name}
           onChange={handleNameChange}
           placeholder="Escriba su nombre"
@@ -84,6 +139,7 @@ const UserForm = () => {
           type="phone"
           id="phone"
           name="phone"
+          maxLength={9}
           value={state?.user?.phone}
           onChange={handlePhoneChange}
           placeholder="+569 8765 432"
@@ -108,6 +164,8 @@ const UserForm = () => {
         />
       </div>
 
+      <p>{errorMsg.allFieldRequierd}</p>
+
       <div className="my-8">
         <div className="flex flex-col items-center">
           <small className="text-sm font-light mb-4 text-gray-500">
@@ -119,7 +177,7 @@ const UserForm = () => {
                 state.user.range === 1
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
-              } px-4 py-2 rounded-md`}
+              } px-4 py-2 rounded-md text-sm`}
               onClick={(ev) => {
                 ev.preventDefault();
                 handleRangeChange(1);
@@ -132,7 +190,7 @@ const UserForm = () => {
                 state.user.range === 2
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
-              } px-4 py-2 rounded-md`}
+              } px-4 py-2 rounded-md text-sm`}
               onClick={(ev) => {
                 ev.preventDefault();
                 handleRangeChange(2);
@@ -145,7 +203,7 @@ const UserForm = () => {
                 state.user.range === 3
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
-              } px-4 py-2 rounded-md`}
+              } px-4 py-2 rounded-md text-sm`}
               onClick={(ev) => {
                 ev.preventDefault();
                 handleRangeChange(3);
@@ -158,7 +216,7 @@ const UserForm = () => {
                 state.user.range === 4
                   ? 'bg-amber-500 text-white'
                   : 'bg-gray-200 text-gray-700'
-              } px-4 py-2 rounded-md`}
+              } px-4 py-2 rounded-md text-sm`}
               onClick={(ev) => {
                 ev.preventDefault();
                 handleRangeChange(4);
@@ -182,19 +240,22 @@ const UserForm = () => {
 
       <div className="flex items-center mt-6">
         <input
-          id="default-checkbox"
+          id="terms"
           type="checkbox"
-          value=""
-          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          value={state.user.terms}
+          onChange={handleTermsChange}
+          className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-amber-500 checked:bg-amber-500 checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#ca6f3b] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-amber-500 dark:checked:bg-amber-500"
         />
         <label
-          htmlFor="default-checkbox"
+          htmlFor="terms"
           className="ml-2 mt-4 text-sm font-light text-gray-500"
         >
           Al continuar estas aceptando los términos y condiciones y la politica
           de privacidad
         </label>
       </div>
+
+      <p>{errorMsg.acceptTerms}</p>
 
       <div className="mt-8 flex justify-center">
         <Button type="submit">Enviar</Button>

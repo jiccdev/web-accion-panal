@@ -8,6 +8,12 @@ export const reducer = (state, action) => {
         user: payload,
       };
 
+    case 'CREATE_VALIDATION_USER_CODE':
+      return {
+        ...state,
+        validationCode: payload,
+      };
+
     case 'UPDATE_BASIC_DEMOS':
       return {
         ...state,

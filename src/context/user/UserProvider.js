@@ -7,7 +7,11 @@ const initialState = {
     name: '',
     phone: '',
     email: '',
-    range: '',
+    range: 1,
+    terms: false,
+  },
+  validationCode: {
+    uniqueCode: undefined,
   },
   basicDemos: [],
   advancedDemos: [],
