@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 :root {
-	--font-poppins-regular: 'Poppins-regular';
-	--font-poppins-semobold: 'Poppins-semibold';
-	--font-poppins-bold: 'Poppins-bold';
-	--font-inter-regular: 'Inter-regular';
-	--font-bristone: 'Bristone';
+  --font-poppins-regular: 'Poppins-regular';
+  --font-poppins-semobold: 'Poppins-semibold';
+  --font-poppins-bold: 'Poppins-bold';
+  --font-inter-regular: 'Inter-regular';
+  --font-bristone: 'Bristone';
 }
 
 @font-face {
-	font-family: 'Poppins-regular';
-	src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+  font-family: 'Poppins-regular';
+  src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
 }
 
 @font-face {
-	font-family: 'Poppins-bold';
-	src: url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
+  font-family: 'Poppins-bold';
+  src: url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
 }
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	font-family: var(--font-poppins-regular);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-poppins-regular);
 }
 
 h1,
@@ -33,5 +33,26 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-poppins-bold);
+  font-family: var(--font-poppins-bold);
+}
+
+.splide__arrow svg {
+  fill: #6b7280 !important;
+  padding: 0.9rem;
+  font-size: 1rem !important;
+  background-color: #d1d5db !important;
+  border-radius: 50px;
+}
+
+.splide__pagination__page {
+  background-color: white !important;
+  padding: 0.4rem !important;
+  border-radius: 50px !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #f59e0b !important;
+  width: 10px;
+  padding: 0.4rem !important;
+  border-radius: 50px !important;
 }
