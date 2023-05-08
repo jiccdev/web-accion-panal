@@ -1,9 +1,9 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiUserSearchFill, RiPencilRulerLine } from 'react-icons/ri';
 import {
-	BsBarChartFill,
-	BsCheckCircle,
-	BsFillCalendarCheckFill,
+  BsBarChartFill,
+  BsCheckCircle,
+  BsFillCalendarCheckFill,
 } from 'react-icons/bs';
 import { GiMoneyStack, GiHomeGarage } from 'react-icons/gi';
 import { TbPigMoney } from 'react-icons/tb';
@@ -19,22 +19,26 @@ import { TbSquareRoundedNumber3Filled } from 'react-icons/tb';
 import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import { IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowForward, IoClose } from 'react-icons/io';
 import { HiClipboard, HiClipboardCheck } from 'react-icons/hi';
 
 import {
-	FaUserAlt,
-	FaShare,
-	FaBed,
-	FaBath,
-	FaThList,
-	FaMapMarked,
-	FaMapMarkerAlt,
+  FaUserAlt,
+  FaShare,
+  FaBed,
+  FaBath,
+  FaThList,
+  FaMapMarked,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
-import { BsFillTelephoneFill, BsSearch } from 'react-icons/bs';
+import { BsFillTelephoneFill, BsSearch, BsFillPlayFill } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
-import { BsFillHouseAddFill, BsFillGridFill } from 'react-icons/bs';
-import { BiBookOpen } from 'react-icons/bi';
+import {
+  BsFillHouseAddFill,
+  BsFillGridFill,
+  BsFillInboxFill,
+} from 'react-icons/bs';
+import { BiBookOpen, BiPaperPlane } from 'react-icons/bi';
 import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
@@ -101,5 +105,5 @@ export const iconsList = {
 	MdDevices,
 	FaCogs,
 	GiProgression,
-	IoIosPeople,
+	IoIosPeople
 };
