@@ -44,7 +44,7 @@ const UserEmailValidation = () => {
 
   const onFormSubmit = (ev) => {
     ev.preventDefault();
-    const user = state.user;
+
     // compareValidationCode() && console.log('enviando...');
     // 1.- enviar correo a ejecutivo de accion panal si es status 200 y despues de uno 2 seg se redirige a web-demos...
 
@@ -56,7 +56,7 @@ const UserEmailValidation = () => {
     });
   };
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <div className="bg-white p-5">
@@ -161,33 +161,11 @@ const UserEmailValidation = () => {
 
         {sendRequestBtn && (
           <div className="flex items-center justify-center">
-            <Button
-              type="submit"
-              onClick={onValidateClick}
-              className="flex items-center justify-center"
-            >
-              <Link href="/web-demos">
-                Enviar Solicitud <BiPaperPlane />
-              </Link>
+            <Button type="submit" className="flex items-center justify-center">
+              Enviar Solicitud
             </Button>
           </div>
         )}
-
-        {/* {sendRequestBtn && (
-          <div className="flex items-center justify-center mt-10">
-            <Link href="/web-demos">
-              <Button
-                onClick={onValidateClick}
-                className="flex items-center justify-center"
-              >
-                Enviar Solicitud{' '}
-                <i className="text-xl ml-1">
-                  <BiPaperPlane />
-                </i>
-              </Button>
-            </Link>
-          </div>
-        )} */}
       </form>
     </div>
   );

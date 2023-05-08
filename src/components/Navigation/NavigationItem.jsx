@@ -35,7 +35,7 @@ const NavigationItem = ({ menuItem }) => {
                       href={href}
                       className={`${
                         asPath === href
-                          ? 'bg-white border-2 border-orange-500 text-orange-500 rounded-full flex items-center transition duration-150 ease-in-out hover:bg-orange-500 hover:text-white focus:outline-none focus-visible:ring'
+                          ? 'bg-white border-2 border-amber-500 text-amber-500 rounded-full flex items-center transition duration-150 ease-in-out hover:bg-ambers-500 hover:text-white focus:outline-none focus-visible:ring'
                           : 'flex items-center border-2 border-transparent rounded-full transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring'
                       }`}
                     >
@@ -57,7 +57,7 @@ const NavigationItem = ({ menuItem }) => {
       target={href === 'http://190.114.255.247:195/' ? '_blank' : ''}
       className={`${
         asPath === href
-          ? 'border-b-2 border-orange-500'
+          ? 'border-b-2 border-amber-500'
           : 'border-b-2 border-b-transparent'
       } inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5`}
     >

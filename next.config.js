@@ -9,8 +9,9 @@ const nextConfig = {
       'wallpapercave.com',
       'dummyimage.com',
       'cloudinary.com',
+      'res.cloudinary.com',
     ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
