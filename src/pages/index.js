@@ -16,7 +16,7 @@ const Home = () => (
       <WebPageQuotation />
       <HomeComponent />
       <AboutComponent />
-      <ContactComponent/>
+      <ContactComponent />
     </LayoutPage>
   </>
 );

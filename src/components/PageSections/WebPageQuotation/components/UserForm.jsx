@@ -91,7 +91,7 @@ const UserForm = () => {
     });
   };
 
-  console.log('desde personal data', state.validationCode.uniqueCode);
+  // console.log('desde personal data', state.validationCode.uniqueCode);
 
   return (
     <form onSubmit={onFormSubmit} className="w-full bg-white p-5">
