@@ -1,7 +1,18 @@
 import React from 'react';
+import Head from './components/Head.jsx';
+import WhyWe from './components/WhyWe.jsx';
 
 const Services = () => (
-  <div>Services</div>
+  <>
+    <Head></Head>
+    <WhyWe></WhyWe>
+
+
+
+  </>
+
+
+
 );
 
 export default Services;

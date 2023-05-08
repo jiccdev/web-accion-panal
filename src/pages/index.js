@@ -2,6 +2,7 @@ import React from 'react';
 import HeadPage from '@/components/HeadPage/HeadPage';
 import LayoutPage from '@/components/LayoutPage/LayoutPage';
 import HomeComponent from '@/components/PageSections/Home/index.jsx';
+import ServicesComponent from '@/components/PageSections/Services/index.jsx';
 
 const Home = () => (
 	<>
@@ -11,6 +12,7 @@ const Home = () => (
 
 		<LayoutPage>
 			<HomeComponent />
+			<ServicesComponent />
 		</LayoutPage>
 	</>
 );
