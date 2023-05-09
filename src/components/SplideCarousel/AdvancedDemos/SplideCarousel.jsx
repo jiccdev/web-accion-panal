@@ -24,7 +24,8 @@ const SplideCarousel = ({
   return (
     <Fragment>
       <div className="uppercase border-l-4 border-amber-500 p-2">
-        <label>{title}</label>
+        <label>{title}</label> |{' '}
+        <span className="text-gray-400">{data?.length}</span>
         <div className="text-gray-500 dark:text-gray-400 text-sm">
           Una descripcion de esta seccion
         </div>
