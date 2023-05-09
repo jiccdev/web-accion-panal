@@ -31,7 +31,7 @@ export const demosBasicData = [
   },
   {
     id: 6,
-    name: 'DEMO PAGINA BASICA 5',
+    name: 'DEMO PAGINA BASICA 6',
     src: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg',
     href: 'https://pagina-web-b3.partnersadvisers.info/',
   },

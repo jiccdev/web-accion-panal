@@ -8,7 +8,7 @@ const SplideCarousel = ({
   advancedDemosSelected,
   setAdvancedDemosSelected,
 }) => {
-  const handleCheckboxChange = (e) => {
+  const handleMultiCheckboxChange = (e) => {
     const option = e.target.value;
     const index = advancedDemosSelected.indexOf(option);
     if (index === -1) {
@@ -54,7 +54,7 @@ const SplideCarousel = ({
             key={demo.id}
             demo={demo}
             advancedDemosSelected={advancedDemosSelected}
-            handleCheckboxChange={handleCheckboxChange}
+            handleMultiCheckboxChange={handleMultiCheckboxChange}
           />
         ))}
       </Splide>
