@@ -1,0 +1,16 @@
+.customerScrollBar {
+}
+
+.customerScrollBar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.customerScrollBar::-webkit-scrollbar-track {
+  background-color: #e5e7eb;
+  border-radius: 100px;
+}
+
+.customerScrollBar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 100px;
+}

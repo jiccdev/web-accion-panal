@@ -49,6 +49,12 @@ import { BsYoutube } from 'react-icons/bs';
 import { MdViewList } from 'react-icons/md';
 import { GoSearch } from 'react-icons/go';
 import { SiFastly } from 'react-icons/si';
+import { MdWeb } from 'react-icons/md';
+import { BsPersonCircle } from 'react-icons/bs';
+import { MdDevices } from 'react-icons/md';
+import { FaCogs } from 'react-icons/fa';
+import { GiProgression } from 'react-icons/gi';
+import { IoIosPeople } from 'react-icons/io';
 
 /* Social in circle */
 import { RiFacebookCircleLine } from "react-icons/ri";
@@ -105,5 +111,5 @@ export const iconsList = {
   BsFillInboxFill,
   RiFacebookCircleLine,
   TiSocialLinkedinCircular,
-  BsLinkedin,
+  BsLinkedin
 };
