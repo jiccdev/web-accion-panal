@@ -10,11 +10,10 @@ const LayoutPage = ({ children }) => {
       {/* MAIN CONTENT */}
       {children}
 
-			{/* FOOTER PAGE */}
-			<Footer />
-		</div>
-	);
-
+      {/* FOOTER PAGE */}
+      <Footer />
+    </div>
+  );
 };
 
 export default LayoutPage;
