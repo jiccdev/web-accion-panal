@@ -43,12 +43,17 @@ import { AiOutlineShareAlt, AiFillPrinter } from 'react-icons/ai';
 import { AiTwotoneGold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { MdOutlineArrowDropDown, MdSimCardDownload } from 'react-icons/md';
-import { BsFacebook } from 'react-icons/bs';
+import { BsFacebook,BsLinkedin } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
 import { MdViewList } from 'react-icons/md';
 import { GoSearch } from 'react-icons/go';
 import { SiFastly } from 'react-icons/si';
+
+/* Social in circle */
+import { RiFacebookCircleLine } from "react-icons/ri";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+
 
 export const iconsList = {
   IoIosArrowDown,
@@ -98,4 +103,7 @@ export const iconsList = {
   IoClose,
   BiPaperPlane,
   BsFillInboxFill,
+  RiFacebookCircleLine,
+  TiSocialLinkedinCircular,
+  BsLinkedin,
 };

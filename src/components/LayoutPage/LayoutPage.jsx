@@ -1,5 +1,5 @@
 import Header from '../Header/Header';
-// import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 
 const LayoutPage = ({ children }) => {
 	return (
@@ -11,7 +11,7 @@ const LayoutPage = ({ children }) => {
 			{children}
 
 			{/* FOOTER PAGE */}
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 };
