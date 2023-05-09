@@ -5,33 +5,37 @@ import ButtonPrimary from '@/components/Button/ButtonPrimary';
 import RequestDemoForm from './components/RequestDemoForm';
 import Modal from '@/components/Modal/Modal';
 import { demosAdvancedData, demosBasicData } from '../../../data/demos';
-import BasicDemos from './components/BasicDemos';
-import AdvancedDemos from './components/AdvancedDemos';
+import Demos from './components/Demos';
 
 const WebDemosAuth = () => {
   const { contextData } = useContext(UserContext);
   const [state] = contextData;
-  const [basicDemoSelected, setBasicDemoSelected] = useState(false);
-  const [advancedDemosSelected, setAdvancedDemosSelected] = useState([]);
+  const [selectedDemo, setSelectedDemo] = useState(false);
   const [showBasicDemoModal, setShowBasicDemoModal] = useState(false);
 
-  const renderContent = () => (
-    <RequestDemoForm {...{ advancedDemosSelected, state }} />
-  );
+  const renderContent = () => <RequestDemoForm {...{ selectedDemo, state }} />;
+
+  console.log(selectedDemo);
 
   return (
     <Section>
       {/* RENDERED BASIC DEMOS */}
-      <BasicDemos
-        {...{ basicDemoSelected, setBasicDemoSelected, demosBasicData }}
+      <Demos
+        {...{
+          selectedDemo,
+          setSelectedDemo,
+          demos: demosBasicData,
+          title: 'Demos Webs basicas',
+          subtitle: 'Este es el subtitulo de demos basica',
+        }}
       />
 
       <div className="w-full flex justify-center items-center my-10">
         <ButtonPrimary
           onClick={() => setShowBasicDemoModal(true)}
-          disabled={basicDemoSelected?.length !== null}
+          disabled={!selectedDemo}
           className={`${
-            basicDemoSelected?.length > 0
+            selectedDemo?.length > 0
               ? 'bg-amber-500 text-white cursor-pointer'
               : 'bg-amber-300 text-white cursor-default'
           }`}
@@ -41,26 +45,40 @@ const WebDemosAuth = () => {
       </div>
 
       {/* RENDERED ADVANCED DEMOS */}
-      <AdvancedDemos
+      <Demos
         {...{
-          advancedDemosSelected,
-          setAdvancedDemosSelected,
-          demosAdvancedData,
+          selectedDemo,
+          setSelectedDemo,
+          demos: demosAdvancedData,
+          title: 'Demos Webs avanzadas',
+          subtitle: 'Este es el subtitulo de demos avanzada',
         }}
       />
-      {/* <div className="w-full flex justify-center items-center">
+
+      <div className="w-full flex justify-center items-center my-10">
         <ButtonPrimary
-          // onClick={() => setShowBasicDemoModal(true)}
-          disabled={advancedDemosSelected.length <= 0}
+          onClick={() => setShowBasicDemoModal(true)}
+          disabled={!selectedDemo}
           className={`${
-            advancedDemosSelected.length > 0
+            selectedDemo?.length > 0
               ? 'bg-amber-500 text-white cursor-pointer'
               : 'bg-amber-300 text-white cursor-default'
           }`}
         >
           Solicitar Demos
         </ButtonPrimary>
-      </div> */}
+      </div>
+
+      <Modal
+        renderTrigger={() => null}
+        isOpenProp={showBasicDemoModal}
+        renderContent={renderContent}
+        contentExtraClass="max-w-2xl"
+        onCloseModal={() => {
+          setShowBasicDemoModal(false);
+        }}
+        modalTitle="Solicitar Demos"
+      />
     </Section>
   );
 };

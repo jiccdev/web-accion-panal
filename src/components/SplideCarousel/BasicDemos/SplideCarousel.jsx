@@ -3,17 +3,16 @@ import { Splide } from '@splidejs/react-splide';
 
 const SplideCarousel = ({
   title,
+  subtitle,
   data,
   RenderedComponent,
-  basicDemoSelected,
-  setBasicDemoSelected,
+  selectedDemo,
+  setSelectedDemo,
 }) => {
-  const handleCheckboxChange = (e) => {
-    if (e.target.checked) {
-      setBasicDemoSelected(e.target.value);
-    } else {
-      setBasicDemoSelected(!basicDemoSelected);
-    }
+  const handleCheckboxChange = (ev) => {
+    ev.target.checked
+      ? setSelectedDemo(ev.target.value)
+      : setSelectedDemo(!selectedDemo);
   };
 
   return (
@@ -22,7 +21,7 @@ const SplideCarousel = ({
         <label>{title}</label> |{' '}
         <span className="text-gray-400">{data?.length}</span>
         <div className="text-gray-500 dark:text-gray-400 text-sm">
-          Una descripcion de esta seccion
+          {subtitle}
         </div>
       </div>
 
@@ -30,7 +29,7 @@ const SplideCarousel = ({
         options={{
           rewind: true,
           gap: '1rem',
-          perPage: 3,
+          perPage: 4,
           breakpoints: {
             640: {
               perPage: 1,
@@ -49,7 +48,7 @@ const SplideCarousel = ({
           <RenderedComponent
             key={demo.id}
             demo={demo}
-            basicDemoSelected={basicDemoSelected}
+            selectedDemo={selectedDemo}
             handleCheckboxChange={handleCheckboxChange}
           />
         ))}

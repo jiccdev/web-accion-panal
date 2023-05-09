@@ -2,18 +2,15 @@ import React from 'react';
 import SplideCarousel from '@/components/SplideCarousel/BasicDemos/SplideCarousel';
 import SplideSlideComponent from '@/components/SplideCarousel/BasicDemos/SplideSlide';
 
-const BasicDemos = ({
-  basicDemoSelected,
-  setBasicDemoSelected,
-  demosBasicData,
-}) => (
+const Demos = ({ selectedDemo, setSelectedDemo, demos, title, subtitle }) => (
   <SplideCarousel
-    title="Webs demo baisca"
-    data={demosBasicData}
+    subtitle={subtitle}
+    title={title}
+    data={demos}
     RenderedComponent={SplideSlideComponent}
-    basicDemoSelected={basicDemoSelected}
-    setBasicDemoSelected={setBasicDemoSelected}
+    selectedDemo={selectedDemo}
+    setSelectedDemo={setSelectedDemo}
   />
 );
 
-export default BasicDemos;
+export default Demos;
