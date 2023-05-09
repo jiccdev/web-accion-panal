@@ -8,7 +8,7 @@ import '@splidejs/react-splide/css/core';
 
 const App = ({ Component, pageProps }) => (
   <UserProvider>
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
   </UserProvider>
 );
 
