@@ -6,6 +6,8 @@ const AdvancedDemos = ({
   selectedAdvancedDemo,
   setSelectedAdvancedDemo,
   selectedDemo,
+  selectedLandingDemo,
+  setSelectedLandingDemo,
   demos,
   title,
   subtitle,
@@ -18,6 +20,8 @@ const AdvancedDemos = ({
     selectedAdvancedDemo={selectedAdvancedDemo}
     setSelectedAdvancedDemo={setSelectedAdvancedDemo}
     selectedDemo={selectedDemo}
+    selectedLandingDemo={selectedLandingDemo}
+    setSelectedLandingDemo={setSelectedLandingDemo}
   />
 );
 

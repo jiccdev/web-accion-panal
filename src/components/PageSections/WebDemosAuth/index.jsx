@@ -33,7 +33,7 @@ const WebDemosAuth = () => {
     />
   );
 
-  // console.log('SELECTED DATA', selectedDemo);
+  console.log('SELECTED DATA', selectedAdvancedDemo);
 
   return (
     <Section>
@@ -69,6 +69,8 @@ const WebDemosAuth = () => {
           selectedAdvancedDemo,
           setSelectedAdvancedDemo,
           selectedDemo,
+          selectedLandingDemo,
+          setSelectedLandingDemo,
           demos: demosAdvancedData,
           title: 'Demos Webs avanzadas',
           subtitle: 'Este es el subtitulo de demos avanzada',

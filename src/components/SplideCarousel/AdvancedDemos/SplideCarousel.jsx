@@ -8,14 +8,17 @@ const SplideCarousel = ({
   RenderedComponent,
   selectedAdvancedDemo,
   setSelectedAdvancedDemo,
+  selectedLandingDemo,
+  setSelectedLandingDemo,
   selectedDemo,
 }) => {
   const handleCheckboxChange = (ev) => {
-    // console.log(ev.target.checked);
-
-    ev.target.checked
-      ? setSelectedAdvancedDemo(ev.target.value)
-      : setSelectedAdvancedDemo(!selectedAdvancedDemo);
+    if (ev.target.checked) {
+      setSelectedAdvancedDemo(ev.target.value);
+    } else {
+      setSelectedAdvancedDemo(!selectedAdvancedDemo);
+      setSelectedLandingDemo(false);
+    }
   };
 
   return (

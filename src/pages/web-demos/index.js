@@ -10,7 +10,6 @@ const WebDemos = () => {
   const { contextData } = useContext(UserContext);
   const [state] = contextData;
 
-  // console.log(state.authUser.length);
   return (
     <>
       <HeadPage>
