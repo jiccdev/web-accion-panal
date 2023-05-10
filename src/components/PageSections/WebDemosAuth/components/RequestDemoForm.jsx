@@ -1,8 +1,22 @@
 import React from 'react';
 import ButtonPrimary from '@/components/Button/ButtonPrimary';
 
-const RequestDemoForm = ({ selectedDemo, state }) => {
-  console.log(state);
+const RequestDemoForm = ({ selectedDemo, selectedLandingDemo, state }) => {
+  console.log([selectedDemo, selectedLandingDemo]);
+
+  const renderSelectedDemos = [selectedDemo, selectedLandingDemo].map(
+    (demo) => (
+      <ul>
+        <li>
+          {demo === false
+            ? selectedDemo.includes('BASICA')
+              ? null
+              : 'LANDING PAGE: Selecciona una Landing demo'
+            : `DEMOS: ${demo}`}
+        </li>
+      </ul>
+    )
+  );
 
   return (
     <form>
@@ -10,9 +24,9 @@ const RequestDemoForm = ({ selectedDemo, state }) => {
       <div>
         <h3>Mis DEMOS</h3>
 
-        <div class="flex flex-col justify-between p-4 leading-normal border rounded-md my-2">
-          <p class="font-normal text-gray-700 dark:text-gray-400">
-            {selectedDemo}
+        <div className="flex flex-col justify-between p-4 leading-normal border rounded-md my-2">
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            {renderSelectedDemos}
           </p>
         </div>
       </div>

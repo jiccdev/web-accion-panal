@@ -4,18 +4,27 @@ import { UserContext } from '@/context/user/UserContext';
 import ButtonPrimary from '@/components/Button/ButtonPrimary';
 import RequestDemoForm from './components/RequestDemoForm';
 import Modal from '@/components/Modal/Modal';
-import { demosAdvancedData, demosBasicData } from '../../../data/demos';
+import {
+  demosAdvancedData,
+  demosBasicData,
+  demosLandingsData,
+} from '../../../data/demos';
 import Demos from './components/Demos';
+import LandingDemos from './components/LandingDemos';
 
 const WebDemosAuth = () => {
   const { contextData } = useContext(UserContext);
   const [state] = contextData;
   const [selectedDemo, setSelectedDemo] = useState(false);
+  const [selectedAdvDemo, setSelectedAdvDemo] = useState(false);
+  const [selectedLandingDemo, setSelectedLandingDemo] = useState(false);
   const [showBasicDemoModal, setShowBasicDemoModal] = useState(false);
 
-  const renderContent = () => <RequestDemoForm {...{ selectedDemo, state }} />;
+  const renderContent = () => (
+    <RequestDemoForm {...{ selectedDemo, selectedLandingDemo, state }} />
+  );
 
-  console.log(selectedDemo);
+  console.log('SELECTED DATA', selectedDemo);
 
   return (
     <Section>
@@ -30,20 +39,6 @@ const WebDemosAuth = () => {
         }}
       />
 
-      <div className="w-full flex justify-center items-center my-10">
-        <ButtonPrimary
-          onClick={() => setShowBasicDemoModal(true)}
-          disabled={!selectedDemo}
-          className={`${
-            selectedDemo?.length > 0
-              ? 'bg-amber-500 text-white cursor-pointer'
-              : 'bg-amber-300 text-white cursor-default'
-          }`}
-        >
-          Solicitar Demos
-        </ButtonPrimary>
-      </div>
-
       {/* RENDERED ADVANCED DEMOS */}
       <Demos
         {...{
@@ -55,9 +50,25 @@ const WebDemosAuth = () => {
         }}
       />
 
+      {/* RENDERED LANDING DEMOS */}
+      {selectedDemo ? (
+        <LandingDemos
+          {...{
+            selectedLandingDemo,
+            setSelectedLandingDemo,
+            demos: demosLandingsData,
+            title: 'Demos Webs landing pages',
+            subtitle: 'Este es el subtitulo de landings page',
+          }}
+        />
+      ) : null}
+
       <div className="w-full flex justify-center items-center my-10">
         <ButtonPrimary
-          onClick={() => setShowBasicDemoModal(true)}
+          onClick={() => {
+            setShowBasicDemoModal(true);
+            // getAllDemosSelected();
+          }}
           disabled={!selectedDemo}
           className={`${
             selectedDemo?.length > 0
@@ -76,6 +87,7 @@ const WebDemosAuth = () => {
         contentExtraClass="max-w-2xl"
         onCloseModal={() => {
           setShowBasicDemoModal(false);
+          // getAllDemosSelected();
         }}
         modalTitle="Solicitar Demos"
       />
