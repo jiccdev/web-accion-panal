@@ -9,6 +9,8 @@ const NavigationItem = ({ menuItem }) => {
   const { href, name, children } = menuItem;
   const { IoIosArrowDown } = iconsList;
 
+  console.log(href);
+
   return children?.length > 0 ? (
     <Popover className="relative">
       {({ open }) => (
@@ -54,7 +56,7 @@ const NavigationItem = ({ menuItem }) => {
   ) : (
     <Link
       href={href}
-      target={href === 'http://190.114.255.247:195/' ? '_blank' : ''}
+      target={href === 'http://190.114.255.247:195' ? '_blank' : ''}
       className={`${
         asPath === href
           ? 'border-b-2 border-amber-500'

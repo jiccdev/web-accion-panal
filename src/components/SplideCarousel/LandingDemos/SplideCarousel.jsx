@@ -29,7 +29,7 @@ const SplideCarousel = ({
         options={{
           rewind: true,
           gap: '1rem',
-          perPage: 4,
+          perPage: 3,
           breakpoints: {
             640: {
               perPage: 1,

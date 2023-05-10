@@ -37,7 +37,7 @@ const WebDemos = () => {
                   href="/#form-demos"
                   className="bg-amber-500 text-white cursor-pointer mt-10"
                 >
-                  Ingresa a Nuestras Demos
+                  Ir a Formulario
                 </ButtonPrimary>
               </div>
             </div>

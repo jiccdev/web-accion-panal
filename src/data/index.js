@@ -43,7 +43,7 @@ export const navigationData = [
   {
     id: 5,
     name: 'Intranet',
-    href: '/#intranet-section',
+    href: 'http://190.114.255.247:195',
   },
 ];
 
