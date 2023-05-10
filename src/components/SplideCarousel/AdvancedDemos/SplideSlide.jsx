@@ -14,7 +14,7 @@ const SplideSlideComponent = ({
       <div
         className={`${
           selectedAdvancedDemo === name ? 'border-2 border-amber-500' : ''
-        } w-full px-4 py-5 bg-white cursor-pointer rounded-xl border-2 hover:border-amber-500 hover:border-2  transition ease-in-out duration-200`}
+        } w-full p-1 bg-white cursor-pointer rounded-lg border-2 hover:border-amber-500 hover:border-2  transition ease-in-out duration-200`}
       >
         <div className="flex items-center justify-center">
           <a href={href} target="_blank">
@@ -23,7 +23,7 @@ const SplideSlideComponent = ({
               alt={`img-demo-${name}`}
               height={250}
               width={450}
-              className="h-[250px] max-h-[250px] object-cover w-full rounded-xl mb-2"
+              className="h-[250px] max-h-[250px] object-cover w-full rounded-md mb-2"
             />
           </a>
         </div>

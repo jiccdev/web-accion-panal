@@ -13,8 +13,8 @@ const RequestDemoForm = ({
     selectedDemo,
     selectedAdvancedDemo,
     selectedLandingDemo,
-  ].map((demo) => (
-    <ul key={demo}>
+  ].map((demo, idx) => (
+    <ul key={idx}>
       <li>{demo}</li>
     </ul>
   ));
