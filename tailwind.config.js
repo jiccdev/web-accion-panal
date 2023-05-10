@@ -12,10 +12,16 @@ module.exports = {
         pingLow: {
           '0%': { transform: 'scale(.9)', opacity: '1' },
           '100%': { transform: 'scale(1.2)', opacity: '0' },
-        }
+        },
+        'heart':{
+          '0%':{transform: 'none'},
+          '50%':{transform: 'scale(1.04)'},
+          '100%':{transform: 'none'}
+        },
       },
       animation: {
         pingLow: 'pingLow 1.5s ease-in-out infinite',
+        'heart':'heart 1.5s infinite',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

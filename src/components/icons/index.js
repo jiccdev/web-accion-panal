@@ -56,6 +56,8 @@ import { SiFastly } from 'react-icons/si';
 import { RiFacebookCircleLine } from 'react-icons/ri';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 
+import { AiOutlinePlus,AiOutlineWhatsApp,AiFillPhone } from 'react-icons/ai';
+
 export const iconsList = {
   IoIosArrowDown,
   RiUserSearchFill,
@@ -155,4 +157,7 @@ export const iconsList = {
   RiFacebookCircleLine,
   TiSocialLinkedinCircular,
   BsLinkedin,
+  AiOutlinePlus,
+  AiOutlineWhatsApp,
+  AiFillPhone,
 };

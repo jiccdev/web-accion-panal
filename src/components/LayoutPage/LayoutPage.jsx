@@ -1,5 +1,6 @@
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Fab from '../SocialMediaFloating/Fab';
 
 const LayoutPage = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const LayoutPage = ({ children }) => {
 
       {/* FOOTER PAGE */}
       <Footer />
+      <Fab/>
     </div>
   );
 };
