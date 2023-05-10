@@ -9,8 +9,6 @@ const NavigationItem = ({ menuItem }) => {
   const { href, name, children } = menuItem;
   const { IoIosArrowDown } = iconsList;
 
-  console.log(href);
-
   return children?.length > 0 ? (
     <Popover className="relative">
       {({ open }) => (

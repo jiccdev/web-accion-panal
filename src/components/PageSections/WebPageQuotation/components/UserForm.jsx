@@ -93,8 +93,6 @@ const UserForm = () => {
     setSuccessMsg('Se enviara un codigo de validacion a su email');
   };
 
-  // console.log('UserForm', state);
-
   return (
     <form onSubmit={onFormSubmit} className="w-full bg-white p-5">
       <div className="mb-4">

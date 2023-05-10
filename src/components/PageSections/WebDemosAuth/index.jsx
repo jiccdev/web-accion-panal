@@ -33,8 +33,6 @@ const WebDemosAuth = () => {
     />
   );
 
-  console.log('SELECTED DATA', selectedAdvancedDemo);
-
   return (
     <Section>
       {/* RENDERED BASIC DEMOS */}
