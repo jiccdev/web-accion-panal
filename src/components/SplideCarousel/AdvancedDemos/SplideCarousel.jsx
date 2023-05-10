@@ -6,16 +6,16 @@ const SplideCarousel = ({
   subtitle,
   data,
   RenderedComponent,
-  selectedDemo,
-  setSelectedDemo,
   selectedAdvancedDemo,
+  setSelectedAdvancedDemo,
+  selectedDemo,
 }) => {
   const handleCheckboxChange = (ev) => {
     console.log(ev.target.checked);
 
     ev.target.checked
-      ? setSelectedDemo(ev.target.value)
-      : setSelectedDemo(!selectedDemo);
+      ? setSelectedAdvancedDemo(ev.target.value)
+      : setSelectedAdvancedDemo(!selectedAdvancedDemo);
   };
 
   return (
@@ -51,9 +51,9 @@ const SplideCarousel = ({
           <RenderedComponent
             key={demo.id}
             demo={demo}
-            selectedDemo={selectedDemo}
             selectedAdvancedDemo={selectedAdvancedDemo}
             handleCheckboxChange={handleCheckboxChange}
+            selectedDemo={selectedDemo}
           />
         ))}
       </Splide>

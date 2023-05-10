@@ -1,22 +1,23 @@
 import React from 'react';
 import ButtonPrimary from '@/components/Button/ButtonPrimary';
 
-const RequestDemoForm = ({ selectedDemo, selectedLandingDemo, state }) => {
+const RequestDemoForm = ({
+  selectedDemo,
+  selectedAdvancedDemo,
+  selectedLandingDemo,
+  state,
+}) => {
   console.log([selectedDemo, selectedLandingDemo]);
 
-  const renderSelectedDemos = [selectedDemo, selectedLandingDemo].map(
-    (demo) => (
-      <ul>
-        <li>
-          {demo === false
-            ? selectedDemo.includes('BASICA')
-              ? null
-              : 'LANDING PAGE: Selecciona una Landing demo'
-            : `DEMOS: ${demo}`}
-        </li>
-      </ul>
-    )
-  );
+  const renderSelectedDemos = [
+    selectedDemo,
+    selectedAdvancedDemo,
+    selectedLandingDemo,
+  ].map((demo) => (
+    <ul key={demo}>
+      <li>{demo}</li>
+    </ul>
+  ));
 
   return (
     <form>

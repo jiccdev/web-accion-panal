@@ -10,18 +10,27 @@ import {
   demosLandingsData,
 } from '../../../data/demos';
 import Demos from './components/Demos';
+import AdvancedDemos from './components/AdvancedDemos';
 import LandingDemos from './components/LandingDemos';
 
 const WebDemosAuth = () => {
   const { contextData } = useContext(UserContext);
   const [state] = contextData;
   const [selectedDemo, setSelectedDemo] = useState(false);
-  const [selectedAdvDemo, setSelectedAdvDemo] = useState(false);
+  const [selectedAdvancedDemo, setSelectedAdvancedDemo] = useState(false);
   const [selectedLandingDemo, setSelectedLandingDemo] = useState(false);
   const [showBasicDemoModal, setShowBasicDemoModal] = useState(false);
 
   const renderContent = () => (
-    <RequestDemoForm {...{ selectedDemo, selectedLandingDemo, state }} />
+    <RequestDemoForm
+      {...{
+        selectedDemo,
+        selectedAdvancedDemo,
+        selectedLandingDemo,
+        selectedLandingDemo,
+        state,
+      }}
+    />
   );
 
   console.log('SELECTED DATA', selectedDemo);
@@ -33,17 +42,33 @@ const WebDemosAuth = () => {
         {...{
           selectedDemo,
           setSelectedDemo,
+          selectedAdvancedDemo,
           demos: demosBasicData,
           title: 'Demos Webs basicas',
           subtitle: 'Este es el subtitulo de demos basica',
         }}
       />
 
+      <div className="w-full flex justify-center items-center my-10">
+        <ButtonPrimary
+          onClick={() => setShowBasicDemoModal(true)}
+          disabled={!selectedDemo}
+          className={`${
+            selectedDemo?.length > 0
+              ? 'bg-amber-500 text-white cursor-pointer'
+              : 'bg-amber-300 text-white cursor-default'
+          }`}
+        >
+          Solicitar Demos
+        </ButtonPrimary>
+      </div>
+
       {/* RENDERED ADVANCED DEMOS */}
-      <Demos
+      <AdvancedDemos
         {...{
+          selectedAdvancedDemo,
+          setSelectedAdvancedDemo,
           selectedDemo,
-          setSelectedDemo,
           demos: demosAdvancedData,
           title: 'Demos Webs avanzadas',
           subtitle: 'Este es el subtitulo de demos avanzada',
@@ -51,7 +76,7 @@ const WebDemosAuth = () => {
       />
 
       {/* RENDERED LANDING DEMOS */}
-      {selectedDemo ? (
+      {selectedAdvancedDemo ? (
         <LandingDemos
           {...{
             selectedLandingDemo,
@@ -69,9 +94,9 @@ const WebDemosAuth = () => {
             setShowBasicDemoModal(true);
             // getAllDemosSelected();
           }}
-          disabled={!selectedDemo}
+          disabled={!selectedLandingDemo}
           className={`${
-            selectedDemo?.length > 0
+            selectedLandingDemo?.length > 0
               ? 'bg-amber-500 text-white cursor-pointer'
               : 'bg-amber-300 text-white cursor-default'
           }`}
