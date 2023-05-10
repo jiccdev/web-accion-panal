@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useRouter } from 'next/router';
 import { UserContext } from '@/context/user/UserContext';
 import Link from 'next/link';
 import Button from '@/components/Button/Button';
@@ -12,6 +13,9 @@ const UserEmailValidation = () => {
   const [validateCodeBtn, setValidateCodeBtn] = useState(true);
   const [sendRequestBtn, setSendRequestBtn] = useState(false);
   const { BiPaperPlane } = iconsList;
+
+  
+  const router = useRouter();
 
   const handleInputChange = (event, index) => {
     const newValues = [...inputValues];
@@ -54,6 +58,8 @@ const UserEmailValidation = () => {
       type: 'UPDATE_USER_AUTH',
       payload: [state.user],
     });
+
+    router.push('/web-demos');
   };
 
   // console.log(state);
@@ -162,7 +168,7 @@ const UserEmailValidation = () => {
         {sendRequestBtn && (
           <div className="flex items-center justify-center">
             <Button type="submit" className="flex items-center justify-center">
-              Enviar Solicitud
+              Ver Demos
             </Button>
           </div>
         )}

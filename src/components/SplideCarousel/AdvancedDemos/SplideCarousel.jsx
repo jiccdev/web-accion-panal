@@ -11,7 +11,7 @@ const SplideCarousel = ({
   selectedDemo,
 }) => {
   const handleCheckboxChange = (ev) => {
-    console.log(ev.target.checked);
+    // console.log(ev.target.checked);
 
     ev.target.checked
       ? setSelectedAdvancedDemo(ev.target.value)

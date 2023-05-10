@@ -13,7 +13,10 @@ const WebPageQuotation = () => {
       ellipsed
       className="flex flex-col items-center justify-center h-[900px]"
     >
-      <div className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[35%] rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10">
+      <div
+        id="form-demos"
+        className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[35%] rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10"
+      >
         <h3 className="uppercase text-center text-lg xl:text-2xl text-gray-700 border-b mb-6">
           Cotiza tú página web inmobiliaria
         </h3>

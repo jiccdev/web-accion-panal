@@ -33,7 +33,7 @@ const WebDemosAuth = () => {
     />
   );
 
-  console.log('SELECTED DATA', selectedDemo);
+  // console.log('SELECTED DATA', selectedDemo);
 
   return (
     <Section>

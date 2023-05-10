@@ -10,6 +10,7 @@ const UserForm = () => {
   const [errorMsg, setErrorMsg] = useState({
     allFieldRequierd: '',
   });
+  const [successMsg, setSuccessMsg] = useState('');
 
   /** Handle Name change */
   const handleNameChange = (ev) => {
@@ -50,7 +51,7 @@ const UserForm = () => {
       type: 'UPDATE_USER',
       payload: {
         ...state.user,
-        range: value,
+        // range: value,
       },
     });
   };
@@ -89,9 +90,10 @@ const UserForm = () => {
     setErrorMsg({
       allFieldRequierd: '',
     });
+    setSuccessMsg('Se enviara un codigo de validacion a su email');
   };
 
-  // console.log('desde personal data', state.validationCode.uniqueCode);
+  // console.log('UserForm', state);
 
   return (
     <form onSubmit={onFormSubmit} className="w-full bg-white p-5">
@@ -155,7 +157,16 @@ const UserForm = () => {
         <Alert errorMsg={errorMsg.allFieldRequierd} />
       )}
 
-      <div className="my-8">
+      {successMsg && (
+        <div
+          className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50"
+          role="alert"
+        >
+          {successMsg}
+        </div>
+      )}
+
+      {/* <div className="my-8">
         <div className="flex flex-col items-center">
           <small className="text-sm font-light mb-4 text-gray-500">
             Selecciona un rango de propiedades:
@@ -225,7 +236,7 @@ const UserForm = () => {
               : '75-100'}
           </small>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex items-center mt-6">
         <input

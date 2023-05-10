@@ -19,6 +19,8 @@ const RequestDemoForm = ({
     </ul>
   ));
 
+  // console.log(state);
+
   return (
     <form>
       <h4 className="text-sm pb-2">Demos seleccionados</h4>
