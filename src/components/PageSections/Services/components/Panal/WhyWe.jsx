@@ -1,5 +1,5 @@
-import React from 'react'
-import HeadImage from '../../../../assets/img/servics/laptop.png';
+import React from 'react';
+import HeadImage from '../../../../../assets/img/servics/laptop.png'
 import Image from 'next/image'
 import HeadingSection from '@/components/HeadingSection/HeadingSection';
 import { iconsList } from '@/components/icons';
@@ -18,14 +18,20 @@ const WhyWe = () => {
 
     return (
         <div className='justify-center items-center mt-20'>
-            <div className='mb-20'>
-                <HeadingSection
-                    title="¿POR QUÉ UNIRTE A NUESTRA PLATAFORMA?"
-                    subtitle=""
-                    alignment="center"
-                    color="violet"
-                />
+            <div className='flex justify-center items-center'>
+                <div className='max-w-[1300px] w-full'>
+
+                    <HeadingSection
+                        title="¿Por Qué unirte a nuestra plataforma?"
+                        subtitle=""
+                        alignment="center"
+                        color="violet"
+                    />
+                </div>
             </div>
+
+
+
             <div className='flex justify-center items-center w-full'>
                 <div className='grid gap-8 max-w-[1300px]'>
                     <div className='flex justify-center items-center gap-8 flex-wrap'>
@@ -45,13 +51,13 @@ const WhyWe = () => {
                         </div> */}
 
 
-                        <div className="w-[50%] h-50 bg-white shadow-md rounded-2xl overflow-hidden">
+                        <div className="xl:w-[50%] w-full mx-4 h-50 bg-white shadow-2xl rounded-3xl overflow-hidden hover:scale-105 transition duration-500">
                             <div className="px-5 py-4 flex items-center justify-center">
                                 <h2 className="text-lg font-bold text-center">Diseño</h2>
                             </div>
-                            <div className="px-4 py-2 flex">
-                                <div className="flex items-center ml-2">
-                                    <div className="text-2xl">
+                            <div className="px-4 py-2 flex ">
+                                <div className="flex items-center ml-2 ">
+                                    <div className="text-2xl ">
                                         <MdWeb size="4rem" color='#489F94' />
                                     </div>
                                 </div>
@@ -77,8 +83,8 @@ const WhyWe = () => {
 
 
                     </div>
-                    <div className='flex justify-center items-center gap-4'>
-                        <div className="w-[50%] h-50 bg-white shadow-md rounded-2xl overflow-hidden">
+                    <div className='flex justify-center items-center gap-4 flex-wrap'>
+                        <div className="xl:w-[50%] w-full mx-4 h-50 bg-white shadow-2xl rounded-3xl overflow-hidden order-2 md:order-1 hover:scale-105 transition duration-500">
                             <div className="px-5 py-4 flex items-center justify-center">
                                 <h2 className="text-lg font-bold text-center">Funcionalidad</h2>
                             </div>
@@ -134,7 +140,7 @@ const WhyWe = () => {
                         </div>
 
 
-                        <div className='flex flex-auto items-center justify-center'>
+                        <div className='flex flex-auto items-center justify-center order-1 md:order-2'>
                             <Image src={HeadImage} alt="Displays" width="600" height="600" />
                         </div>
 
