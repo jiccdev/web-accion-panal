@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Popover, Transition } from '@headlessui/react';
 import { iconsList } from '../icons';
+import { Link } from 'react-scroll';
+import Link2 from 'next/link';
+
 
 const NavigationItem = ({ menuItem }) => {
   const { asPath } = useRouter();
   const { href, name, children } = menuItem;
   const { IoIosArrowDown } = iconsList;
+
+  const hrefPATH = '/#' + href;
 
   return children?.length > 0 ? (
     <Popover className="relative">
@@ -30,19 +34,28 @@ const NavigationItem = ({ menuItem }) => {
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 w-50">
                 <div className="relative grid gap-1 p-2 px-2 lg:grid-cols-1 bg-white w-auto rounded-xl">
                   {children?.map(({ name, href }) => (
-                    <Link
+                    <li
                       key={name}
-                      href={href}
-                      className={`${
-                        asPath === href
-                          ? 'bg-white border-2 border-amber-500 text-amber-500 rounded-full flex items-center transition duration-150 ease-in-out hover:bg-ambers-500 hover:text-white focus:outline-none focus-visible:ring'
-                          : 'flex items-center border-2 border-transparent rounded-full transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring'
-                      }`}
+                      className={`${asPath === href
+                        ? 'bg-white border-2 border-amber-500 text-amber-500 rounded-full flex items-center transition duration-150 ease-in-out hover:bg-ambers-500 hover:text-white focus:outline-none focus-visible:ring'
+                        : 'flex items-center w-full border-2 border-transparent rounded-full transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring'
+                        }`}
                     >
                       <div className="ml-3">
-                        <p className="text-sm py-2 font-normal">{name}</p>
+                        <p className="text-sm py-2 font-normal">
+                          <Link
+                            to={href}
+                            spy={true}
+                            smooth={true}
+                            offset={-120}
+                            duration={500}
+                          >
+                            <span className='cursor-pointer'>{name}</span>
+                          </Link>
+                        </p>
                       </div>
-                    </Link>
+                    </li>
+
                   ))}
                 </div>
               </div>
@@ -52,17 +65,39 @@ const NavigationItem = ({ menuItem }) => {
       )}
     </Popover>
   ) : (
-    <Link
-      href={href}
-      target={href === 'http://190.114.255.247:195' ? '_blank' : ''}
-      className={`${
-        asPath === href
+    <>
+      {href === 'http://190.114.255.247:195' ? (
+        <li
+          className={`${asPath === hrefPATH
+            ? 'border-b-2 border-amber-500'
+            : 'border-b-2 border-b-transparent'
+            } inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5`}
+        >
+          <a
+            href={href}
+            target='_blank'
+            className='hover:cursor-pointer'>
+            {name}
+          </a>
+        </li>
+      ) : (
+        <li className={`${asPath === hrefPATH
           ? 'border-b-2 border-amber-500'
           : 'border-b-2 border-b-transparent'
-      } inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5`}
-    >
-      {name}
-    </Link>
+          } inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5`}>
+          <Link
+            to={href}
+            spy={true}
+            smooth={true}
+            offset={-120}
+            duration={500}
+          >
+            <span className='cursor-pointer'>{name}</span>
+          </Link>
+        </li>
+
+      )}
+    </>
   );
 };
 
