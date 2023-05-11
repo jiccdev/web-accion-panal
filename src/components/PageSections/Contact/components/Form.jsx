@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = () => {
     return (
-        <div className="mt-12 flex flex-col items-center ">
+        <div className="my-7 flex flex-col items-center ">
             <h1 className="text-2xl xl:text-3xl font-extrabold">
                 Contáctanos
             </h1>
