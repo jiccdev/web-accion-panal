@@ -15,5 +15,8 @@
   "prettier.jsxSingleQuote": false,
   "prettier.tabWidth": 2,
   "prettier.arrowParens": "always",
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

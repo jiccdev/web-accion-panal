@@ -7,7 +7,6 @@ import ServicesComponent from '@/components/PageSections/Services/index.jsx';
 import AboutComponent from '@/components/PageSections/About/index.jsx';
 import ContactComponent from '@/components/PageSections/Contact/index.jsx';
 import WebPageQuotation from '@/components/PageSections/WebPageQuotation';
-// import Footer from '@/components/Footer/Footer';
 
 const Home = () => (
   <>
@@ -21,7 +20,6 @@ const Home = () => (
       <ServicesComponent />
       <ContactComponent />
       <WebPageQuotation />
-      {/* <Footer /> */}
     </LayoutPage>
   </>
 );

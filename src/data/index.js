@@ -6,39 +6,39 @@ export const navigationData = [
   {
     id: 1,
     name: 'Inicio',
-    href: '/#inicio-section',
+    href: 'inicio-section',
   },
   {
     id: 2,
     name: 'Nosotros',
-    href: '/#nosotros-section',
+    href: 'nosotros-section',
   },
   {
     id: 3,
     name: 'Servicios',
-    href: '/#servicios-section',
+    href: 'servicios-section',
     children: [
       {
         id: 1,
         name: 'Panal',
-        href: '/#panal-services',
+        href: 'panal-services',
       },
       {
         id: 2,
         name: 'Yo canjeo',
-        href: '/#yo-canjeo-services',
+        href: 'yo-canjeo-services',
       },
       {
         id: 3,
         name: 'Página web',
-        href: '/#pagina-web-services',
+        href: 'pagina-web-services',
       },
     ],
   },
   {
     id: 4,
     name: 'Contacto',
-    href: '/#contacto-section',
+    href: 'contacto-section',
   },
   {
     id: 5,
