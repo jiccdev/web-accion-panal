@@ -2,6 +2,20 @@ import { iconsList } from '@/components/icons';
 
 const { SiFastly } = iconsList;
 
+const { GiArtificialIntelligence } = iconsList;
+
+const { MdSecurity } = iconsList;
+
+const { GiReceiveMoney } = iconsList;
+
+const { BsFillHouseDoorFill } = iconsList;
+
+const { BiTimer } = iconsList;
+
+const { GiPositionMarker } = iconsList;
+
+const { SlBadge } = iconsList;
+
 export const navigationData = [
   {
     id: 1,
@@ -175,5 +189,83 @@ export const dataClientsCarousel = [
     title: 'Banco TrueCapital',
     img: 'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1680029041/unne-media/bancos/TrueCapital_yuwaip.png',
     href: 'https://www.truecapital.cl/',
+  },
+];
+
+/*SERVICIOS */
+
+export const dataPortalCarousel = [
+  {
+    id: 1,
+    title: 'Portal inmobiliario',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1683742380/Projects/accion-panal/img/Client/png/portalinmobiliario_caidlw.png',
+    href: 'https://www.portalinmobiliario.com/',
+  },
+  {
+    id: 2,
+    title: 'Toc toc',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1683742380/Projects/accion-panal/img/Client/png/toctoc_m7xp0v.png',
+    href: 'https://www.toctoc.com/',
+  },
+  {
+    id: 3,
+    title: 'Yapo',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1683742380/Projects/accion-panal/img/Client/png/yapo_rloeg8.png',
+    href: 'https://new.yapo.cl/',
+  },
+  {
+    id: 4,
+    title: 'Top Propiedades',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1683742380/Projects/accion-panal/img/Client/png/topPropiedades_m5wkgw.png',
+    href: 'https://www.toppropiedades.cl/',
+  },
+];
+
+export const KanjeCard = [
+  {
+    id: 1,
+    title: 'SISTEMA INTELIGENTE',
+    desc: 'Nuestro sistema te ayudara a conseguir de manera sencilla y eficaz la propiedad con las características adecuadas o al cliente interesado',
+    icon: <GiArtificialIntelligence />,
+  },
+  {
+    id: 2,
+    title: 'SEGURIDAD',
+    desc: 'Contamos con un sistema que te brinda seguridad y transparencia en el proceso de canje',
+    icon: <MdSecurity />,
+  },
+  {
+    id: 3,
+    title: 'MAS INGRESOS',
+    desc: 'Amplia tu cartera de propiedades captando nuevos y potenciales clientes y cierra la operaciones lo mas pronto posible.',
+    icon: <GiReceiveMoney />,
+  },
+];
+
+export const BeneficIcons = [
+  {
+    id: 1,
+    title: 'VISIBILIDAD',
+    desc: 'Aumenta la visibilidad de tus propiedades para tener más posibilidades de cerrar negocios.',
+    icon: <BsFillHouseDoorFill />,
+  },
+  {
+    id: 2,
+    title: 'AHORRA TIEMPO',
+    desc: 'Publica y administra tu cartera de una manera fácil y eficaz para que ahorres tiempo y te dediques a arrendar o a vender.',
+    icon: <BiTimer />,
+  },
+  {
+    id: 3,
+    title: 'POSICIONAMIENTO',
+    desc: 'Promociona tu empresa y dale mayor posicionamiento para que compitas con los mejores corredores.',
+    icon: <GiPositionMarker />,
+  },
+
+  {
+    id: 4,
+    title: 'PROFESIONALISMO',
+    desc: 'Transmite un aspecto profesional y brinda seguridad a los clientes.',
+    icon: <SlBadge />,
   },
 ];
