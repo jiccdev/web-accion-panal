@@ -93,8 +93,32 @@ const UserForm = () => {
     setSuccessMsg('Se enviara un codigo de validacion a su email');
   };
 
+
+  const onSubmit = (ev) => {
+    ev.preventDefault()
+
+    fetch(`https://formsubmit.co/ajax/${state.user?.email}`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        Nombre: state.user?.name,
+        Correo: state.user?.email,
+        Telefono: state.user?.phone,
+      })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log('Error al enviar correo', error));
+
+  }
+
+
   return (
-    <form onSubmit={onFormSubmit} className="w-full bg-white p-5">
+    <form onSubmit={onSubmit} name="FormSubmit" className="w-full bg-white p-5">
+      {/* onSubmit={onFormSubmit} */}
       <div className="mb-4">
         <label
           className="block text-gray-500 text-sm font-ligth mb-2"

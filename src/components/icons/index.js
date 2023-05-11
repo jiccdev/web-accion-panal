@@ -51,12 +51,16 @@ import { GiHomeGarage } from 'react-icons/gi';
 import { HiClipboard, HiClipboardCheck } from 'react-icons/hi';
 import { GoSearch } from 'react-icons/go';
 import { SiFastly } from 'react-icons/si';
-
-/* Social in circle */
 import { RiFacebookCircleLine } from 'react-icons/ri';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
-
-import { AiOutlinePlus,AiOutlineWhatsApp,AiFillPhone } from 'react-icons/ai';
+import { AiOutlinePlus, AiOutlineWhatsApp, AiFillPhone } from 'react-icons/ai';
+import { GiArtificialIntelligence } from 'react-icons/gi';
+import { MdSecurity } from 'react-icons/md';
+import { GiReceiveMoney } from 'react-icons/gi';
+import { BsFillHouseDoorFill } from 'react-icons/bs';
+import { BiTimer } from 'react-icons/bi';
+import { GiPositionMarker } from 'react-icons/gi';
+import { SlBadge } from 'react-icons/sl';
 
 export const iconsList = {
   IoIosArrowDown,
@@ -160,4 +164,11 @@ export const iconsList = {
   AiOutlinePlus,
   AiOutlineWhatsApp,
   AiFillPhone,
+  GiArtificialIntelligence,
+  MdSecurity,
+  GiReceiveMoney,
+  BsFillHouseDoorFill,
+  BiTimer,
+  GiPositionMarker,
+  SlBadge,
 };
