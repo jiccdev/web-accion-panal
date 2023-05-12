@@ -1,14 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { UserContext } from '@/context/user/UserContext';
 import Button from '@/components/Button/Button';
 import Alert from '@/components/Alert/Alert';
 import { generateValidationCode } from '@/utils';
+import ContactFormServices from '@/services/ContactForm';
 
 const UserForm = () => {
   const { contextData } = useContext(UserContext);
   const [state, dispatch] = contextData;
   const [errorMsg, setErrorMsg] = useState({
     allFieldRequierd: '',
+    serverEmailError: '',
   });
   const [successMsg, setSuccessMsg] = useState('');
 
@@ -51,7 +54,16 @@ const UserForm = () => {
       type: 'UPDATE_USER',
       payload: {
         ...state.user,
-        // range: value,
+        range: value,
+      },
+    });
+  };
+
+  const handleUniqueCodeChange = () => {
+    dispatch({
+      type: 'CREATE_VALIDATION_USER_CODE',
+      payload: {
+        uniqueCode: state?.validationCode?.uniqueCode,
       },
     });
   };
@@ -67,10 +79,18 @@ const UserForm = () => {
     });
   };
 
-  const onFormSubmit = (ev) => {
+  useEffect(() => {
+    dispatch({
+      type: 'CREATE_VALIDATION_USER_CODE',
+      payload: {
+        uniqueCode: generateValidationCode(),
+      },
+    });
+  }, []);
+
+  const onFormSubmit = async (ev) => {
     ev.preventDefault();
 
-    // ✅
     if (Object.values(state?.user).includes('') || state.user.terms === false) {
       setErrorMsg({
         allFieldRequierd:
@@ -79,46 +99,41 @@ const UserForm = () => {
       return;
     }
 
-    dispatch({
-      type: 'CREATE_VALIDATION_USER_CODE',
-      payload: {
-        uniqueCode: generateValidationCode(),
-      },
-    });
+    try {
+      const response = await ContactFormServices.sendFormToUser(
+        state.user?.name,
+        state.user?.email,
+        state.user?.phone,
+        state.validationCode?.uniqueCode
+      );
 
-    // ✅
-    setErrorMsg({
-      allFieldRequierd: '',
-    });
-    setSuccessMsg('Se enviara un codigo de validacion a su email');
+      if (response.success === 'false') {
+        setErrorMsg({
+          serverEmailError: 'Debes validar tu email para este servicio',
+        });
+      }
+
+      if (response.success === 'true') {
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError: '',
+        });
+
+        setSuccessMsg('Se enviara un código de validación a su email');
+      }
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
-
-  const onSubmit = (ev) => {
-    ev.preventDefault()
-
-    fetch(`https://formsubmit.co/ajax/${state.user?.email}`, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        Nombre: state.user?.name,
-        Correo: state.user?.email,
-        Telefono: state.user?.phone,
-      })
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.log('Error al enviar correo', error));
-
-  }
-
+  console.log(state);
 
   return (
-    <form onSubmit={onSubmit} name="FormSubmit" className="w-full bg-white p-5">
-      {/* onSubmit={onFormSubmit} */}
+    <form
+      onSubmit={onFormSubmit}
+      name="FormSubmit"
+      className="w-full bg-white p-5"
+    >
       <div className="mb-4">
         <label
           className="block text-gray-500 text-sm font-ligth mb-2"
@@ -264,7 +279,7 @@ const UserForm = () => {
         <input
           id="terms"
           type="checkbox"
-          value={state.user.terms}
+          value={state?.user?.terms}
           onChange={handleTermsChange}
           className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-amber-500 checked:bg-amber-500 checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#ca6f3b] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-amber-500 dark:checked:bg-amber-500"
         />
