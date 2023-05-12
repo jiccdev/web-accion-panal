@@ -14,7 +14,6 @@ const UserEmailValidation = () => {
   const [sendRequestBtn, setSendRequestBtn] = useState(false);
   const { BiPaperPlane } = iconsList;
 
-  
   const router = useRouter();
 
   const handleInputChange = (event, index) => {
@@ -49,20 +48,12 @@ const UserEmailValidation = () => {
   const onFormSubmit = (ev) => {
     ev.preventDefault();
 
-    // compareValidationCode() && console.log('enviando...');
-    // 1.- enviar correo a ejecutivo de accion panal si es status 200 y despues de uno 2 seg se redirige a web-demos...
-
-    // 2.- redirigir a vista demo pero como auth
-
     dispatch({
       type: 'UPDATE_USER_AUTH',
       payload: [state.user],
     });
-
     router.push('/web-demos');
   };
-
-  console.log(state);
 
   return (
     <div className="bg-white p-5">

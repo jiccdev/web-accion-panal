@@ -113,6 +113,8 @@ const UserForm = () => {
         setErrorMsg({
           serverEmailError: 'Debes validar tu email para este servicio',
         });
+        setLoading(false);
+        return;
       }
 
       if (response.success === 'true') {
@@ -121,7 +123,11 @@ const UserForm = () => {
           allFieldRequierd: '',
           serverEmailError: '',
         });
+
         setSuccessMsg('Se enviara un código de validación a su email');
+        setTimeout(() => {
+          setSuccessMsg('');
+        }, 4000);
       }
     } catch (error) {
       console.log('error', error);
@@ -192,6 +198,10 @@ const UserForm = () => {
 
       {errorMsg.allFieldRequierd && (
         <Alert errorMsg={errorMsg.allFieldRequierd} />
+      )}
+
+      {errorMsg.serverEmailError && (
+        <Alert errorMsg={errorMsg.serverEmailError} />
       )}
 
       {successMsg && (
