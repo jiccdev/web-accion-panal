@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import axios from 'axios';
 
 const ContactFormServices = {
@@ -8,6 +7,7 @@ const ContactFormServices = {
       {
         Nombre: name,
         Telefono: phone,
+        Correo: userEmail,
         Codigo: uniqueCode,
       },
       {
@@ -20,13 +20,14 @@ const ContactFormServices = {
     return response.data;
   },
 
-  sendFormToRealtor: async (name, realtorEmail, phone) => {
+  sendFormToRealtor: async (name, userEmail, phone, realtorEmail, demos) => {
     const response = await axios.post(
       `https://formsubmit.co/ajax/${realtorEmail}`,
       {
         Nombre: name,
-        Correo: email,
+        Correo: userEmail,
         Telefono: phone,
+        Demos_Seleccionadas: demos,
       },
       {
         headers: {

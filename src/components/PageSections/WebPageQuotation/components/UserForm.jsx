@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import { UserContext } from '@/context/user/UserContext';
 import Button from '@/components/Button/Button';
 import Alert from '@/components/Alert/Alert';
@@ -92,7 +91,10 @@ const UserForm = () => {
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
 
-    if (Object.values(state?.user).includes('') || state.user.terms === false) {
+    if (
+      Object.values(state?.user).includes('') ||
+      state?.user?.terms === false
+    ) {
       setErrorMsg({
         allFieldRequierd:
           'Por favor, completa todos los campos y acepta los terminos y condiciones',
