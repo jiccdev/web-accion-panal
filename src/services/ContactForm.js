@@ -38,6 +38,24 @@ const ContactFormServices = {
     );
     return response.data;
   },
+
+  sendContactForm: async (name, userEmail, phone, realtorEmail) => {
+    const response = await axios.post(
+      `https://formsubmit.co/ajax/${realtorEmail}`,
+      {
+        Nombre: name,
+        Correo: userEmail,
+        Telefono: phone,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+    );
+    return response.data;
+  },
 };
 
 export default ContactFormServices;

@@ -88,6 +88,8 @@ const UserForm = () => {
     });
   }, []);
 
+  console.log(state);
+
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
 

@@ -77,7 +77,7 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        'ign.casrod59@gmail.com',
+        'ign.casrod59@gmail.com', // realtor email
         `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
           selectedLandingDemo || ''
         }`
@@ -97,7 +97,9 @@ const RequestDemoForm = ({
           setSuccessMsg('');
         }, 4000);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (
