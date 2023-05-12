@@ -12,7 +12,7 @@ const initialState = {
   },
   authUser: [],
   validationCode: {
-    uniqueCode: '', //undefined
+    uniqueCode: undefined,
   },
   basicDemos: [],
   advancedDemos: [],

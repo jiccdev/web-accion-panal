@@ -62,7 +62,7 @@ const UserEmailValidation = () => {
     router.push('/web-demos');
   };
 
-  // console.log(state);
+  console.log(state);
 
   return (
     <div className="bg-white p-5">
