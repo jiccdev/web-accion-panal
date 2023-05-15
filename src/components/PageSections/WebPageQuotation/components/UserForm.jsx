@@ -88,8 +88,6 @@ const UserForm = () => {
     });
   }, []);
 
-  console.log(state);
-
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
 
@@ -115,7 +113,8 @@ const UserForm = () => {
 
       if (response.success === 'false') {
         setErrorMsg({
-          serverEmailError: 'Debes validar tu email para este servicio',
+          serverEmailError:
+            'Tu correo necesita activación, enviaremos un link de activación de tu email',
         });
         setLoading(false);
         return;

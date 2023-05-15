@@ -77,7 +77,7 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        'ign.casrod59@gmail.com', // realtor email
+        'jos.delalamo@gmail.com', // realtor email
         `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
           selectedLandingDemo || ''
         }`
