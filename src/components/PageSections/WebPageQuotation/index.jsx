@@ -21,7 +21,7 @@ const WebPageQuotation = () => {
           Cotiza tú página web inmobiliaria
         </h3>
 
-        <div className="w-[100%]">
+        <div className="w-[100%]" id='FormWeb'>
           <TabGroup
             tabListData={tabListData}
             tabPanel0={<UserForm />}

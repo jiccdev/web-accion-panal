@@ -1,5 +1,4 @@
 import React from 'react';
-import HeadImage from '../../../../../assets/img/servics/laptop.png'
 import Image from 'next/image'
 import HeadingSection from '@/components/HeadingSection/HeadingSection';
 import { iconsList } from '@/components/icons';
@@ -37,18 +36,10 @@ const WhyWe = () => {
                     <div className='flex justify-center items-center gap-8 flex-wrap'>
 
                         <div className='flex flex-auto items-center justify-center'>
-                            <Image src={HeadImage} alt="Displays" width="550" height="600" />
+                            <Image src="https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163558/Projects/accion-panal/img/services/png/laptop_ror73c.png" alt="Displays" width="550" height="600" />
                         </div>
 
-                        {/*  <div className={`flex flex-col items-center justify-center `}>
-                            <Image
-                                src={HeadImage}
-                                alt={`Displays`}
-                                className="h-40 sm:h-56 xl:h-80 w-auto"
-                                width={100}
-                                height={150}
-                            />
-                        </div> */}
+
 
 
                         <div className="xl:w-[50%] w-full mx-4 h-50 bg-white shadow-2xl rounded-3xl overflow-hidden hover:scale-105 transition duration-500">
@@ -141,7 +132,7 @@ const WhyWe = () => {
 
 
                         <div className='flex flex-auto items-center justify-center order-1 md:order-2'>
-                            <Image src={HeadImage} alt="Displays" width="600" height="600" />
+                            <Image src="https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163558/Projects/accion-panal/img/services/png/laptop_ror73c.png" alt="Displays" width="600" height="600" />
                         </div>
 
 
