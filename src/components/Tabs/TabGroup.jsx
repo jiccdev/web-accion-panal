@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Tab } from '@headlessui/react';
 
 const TabGroup = ({ tabListData, tabPanel0, tabPanel1 }) => {
@@ -7,9 +7,9 @@ const TabGroup = ({ tabListData, tabPanel0, tabPanel1 }) => {
   const renderedTabList = tabListData.map((tab, idx) => (
     <Tab key={idx} as={Fragment}>
       <button
-        className={`${selectedTab === idx ? 'bg-amber-500 text-white' : 'bg-amber-100'
-          } w-[50%] p-2 xl:p-3`}
-      // disabled={selectedTab !== idx}
+        className={`${
+          selectedTab === idx ? 'bg-amber-500 text-white' : 'bg-amber-100'
+        } w-[50%] p-2 xl:p-3 outline-none focus:outline-none`}
       >
         <div className="flex items-center justify-center">
           <span className="mr-2 w-7 h-7 rounded-full bg-amber-600 text-white flex items-center justify-center">
