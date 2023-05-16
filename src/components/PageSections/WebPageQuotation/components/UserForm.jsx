@@ -151,7 +151,7 @@ const UserForm = () => {
           Nombre
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="text"
           id="name"
           name="name"
@@ -170,7 +170,7 @@ const UserForm = () => {
           Teléfono
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="phone"
           id="phone"
           name="phone"
@@ -189,7 +189,7 @@ const UserForm = () => {
           E-mail
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="email"
           id="email"
           name="email"
