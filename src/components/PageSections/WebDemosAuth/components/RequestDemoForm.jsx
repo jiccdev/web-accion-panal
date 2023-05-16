@@ -4,6 +4,7 @@ import ContactFormServices from '@/services/ContactForm';
 import ButtonPrimary from '@/components/Button/ButtonPrimary';
 import Button from '@/components/Button/Button';
 import { iconsList } from '@/components/icons';
+import { realtorData } from '@/data/realtorData';
 
 const RequestDemoForm = ({
   selectedDemo,
@@ -77,7 +78,7 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        'jos.delalamo@gmail.com', // realtor
+        realtorData?.email, // realtor
         `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
           selectedLandingDemo || ''
         }`
