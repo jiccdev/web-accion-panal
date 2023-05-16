@@ -12,7 +12,7 @@ const DigitalAge = () => {
   return (
     <Section className="h-auto mx-auto w-[95%] md:w-[90%] xl:w-[75%]">
       <HeadingSection
-        title="Le apostamos a la era digital"
+        title="Apostamos a la era digital"
         subtitle="Impulsa tu negocio inmobiliario con las mejores herramientas"
         alignment="center"
         color="violet"

@@ -71,7 +71,7 @@ const UserEmailValidation = () => {
             value={inputValues[0]}
             onChange={(event) => handleInputChange(event, 0)}
             autoFocus
-            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           />
           <input
             type="text"
@@ -84,7 +84,7 @@ const UserEmailValidation = () => {
                 document.getElementById('input-2').focus();
               }
             }}
-            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           />
           <input
             type="text"
@@ -97,7 +97,7 @@ const UserEmailValidation = () => {
                 document.getElementById('input-3').focus();
               }
             }}
-            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           />
           <input
             type="text"
@@ -110,7 +110,7 @@ const UserEmailValidation = () => {
                 document.getElementById('submit-button').click();
               }
             }}
-            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+            className="mx-1 text-center text-xl px-4 py-6 w-[25%] border-gray-300 rounded-md focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           />
         </div>
 
