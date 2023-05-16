@@ -16,15 +16,18 @@ import BeneficWeb from './components/PagWeb/BeneficWeb.jsx';
 const Services = () => (
   <>
     <div id='panal-services'>
-
       <Section>
         <Head></Head>
         <WhyWe></WhyWe>
         <SeeMore></SeeMore>
         <Portals></Portals>
       </Section>
-      <Formservices></Formservices>
+    </div>
 
+
+    <div id="FormPanal">
+      <Formservices >
+      </Formservices>
     </div>
 
     <div id='yo-canjeo-services'>
@@ -33,7 +36,11 @@ const Services = () => (
         <SystemKanje></SystemKanje>
         <Diagrama></Diagrama>
       </Section>
-      <FormKanje></FormKanje>
+    </div >
+
+    <div id="FormCanje">
+      <FormKanje >
+      </FormKanje>
     </div>
 
 
@@ -43,8 +50,6 @@ const Services = () => (
         <PersonalDesign></PersonalDesign>
         <BeneficWeb></BeneficWeb>
       </Section>
-
-
     </div>
   </>
 

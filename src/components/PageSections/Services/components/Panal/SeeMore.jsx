@@ -6,7 +6,7 @@ const SeeMore = () => {
 
 
     return (
-        <div className="flex flex-col xl:flex-row xl:flex-wrap xl:w-[70%] m-20 w-full h-42 justify-center items-center bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto text-center">
+        <div className="flex flex-col xl:flex-row xl:flex-wrap xl:w-[80%] m-20 w-full h-42 justify-center items-center bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto text-center">
             <div className="w-full xl:w-1/2 px-4 py-6 order-last xl:order-none">
                 <Videoimg />
             </div>

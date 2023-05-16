@@ -1,44 +1,34 @@
 import React from 'react'
 import Button from '@/components/Button/Button'
 import Image from 'next/image'
+import { Link } from 'react-scroll';
 function HeadWeb() {
     return (
 
-
-
-        <div className="flex flex-col md:flex-row justify-end items-center mt-40">
-            <div className="w-full md:w-1/2 lg:w-1/3 p-4 ">
-                <div className="flex flex-col gap-10 ">
-                    <div className='mb-20'>
-
-                        <h2 className='text-3xl font-bold md:text-4xl mr-4 my-6 md:mx-20 text-center w-max relative before:absolute before:content-[""] before:left-0 before:bottom-0 before:h-3 before:w-2/4 before:border-b-4 before:border-panal-orange'>
-                            DESARROLLO WEB
-                        </h2>
-
+        <div className='flex justify-center flex-wrap items-center gap-10'>
+            <div className='max-w-[40rem] w-full'>
+                <p className='text-3xl uppercase my-10 font-semibold  md:mx-24 w-max relative before:absolute before:content-[""] before:left-0 before:bottom-0 before:h-3 before:w-2/4 before:border-b-4 before:border-panal-orange'>
+                    DESARROLLO WEB
+                </p>
+                <h2 className='text-panal-cyan text-2xl xl:text-5xl uppercase my-10'>
+                    PÁGINAS WEB INMOBILIARIAS
+                </h2>
+                <span className="my-10 text-md xl:text-xl items-center justify-center text-gray-800">
+                    Impulsa tu negocio inmobiliario, aumentando la presencia en internet con tu pagina web personalizada
+                </span>
+                <Link to="FormWeb" spy={true} smooth={true} offset={-130} duration={1000}>
+                    <div className="my-10">
+                        <Button>CONOCE NUESTROS MODELOS</Button>
                     </div>
-
-                    <div className="flex flex-col md:items-start justify-center items-center md:items-left gap-2">
-                        <h2 className="text-5xl font-bold xl:text-7xl text-teal-500">PÁGINAS WEB INMOBILIARIAS</h2>
-                        <span className="mt-5 text-md xl:text-xl items-center justify-center text-gray-800">
-                            Impulsa tu negocio inmobiliario, aumentando la presencia en internet con tu pagina web personalizada
-                        </span>
-                        <div className="my-5">
-                            <Button>CONOCE NUESTROS MODELOS</Button>
-                        </div>
-                    </div>
-                </div>
+                </Link>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/2 p-4">
-                <div className="flex justify-center items-start">
-                    <div className="col-span-2">
-                        <Image src='https://res.cloudinary.com/drd52d73n/image/upload/v1683215697/Panal/imageDisplay.png' alt="Displays" width="600" height="900" />
-                    </div>
-                </div>
+
+            <div>
+                <Image src='https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163844/Projects/accion-panal/img/services/png/pantalla_jz7spd.png' width="600" height="900" />
+
             </div>
+
         </div>
-
-
-
 
 
 
