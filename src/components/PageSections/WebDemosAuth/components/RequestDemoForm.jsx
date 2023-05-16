@@ -77,13 +77,13 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        'jos.delalamo@gmail.com', // realtor email
+        'jos.delalamo@gmail.com', // realtor
         `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
           selectedLandingDemo || ''
         }`
       );
 
-      if (response.success === 'true') {
+      if ((await response.success) === 'true') {
         setLoading(false);
         setErrorMsg({
           allFieldRequierd: '',

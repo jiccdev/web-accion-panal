@@ -11,6 +11,7 @@ const UserForm = () => {
   const [errorMsg, setErrorMsg] = useState({
     allFieldRequierd: '',
     serverEmailError: '',
+    networkError: '',
   });
   const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -79,6 +80,18 @@ const UserForm = () => {
     });
   };
 
+  const resetForm = () =>
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        name: '',
+        phone: '',
+        email: '',
+        terms: false,
+      },
+    });
+
   useEffect(() => {
     dispatch({
       type: 'CREATE_VALIDATION_USER_CODE',
@@ -111,7 +124,9 @@ const UserForm = () => {
         state.validationCode?.uniqueCode
       );
 
-      if (response.success === 'false') {
+      console.log(response);
+
+      if ((await response.success) === 'false') {
         setErrorMsg({
           serverEmailError:
             'Tu correo necesita activación, enviaremos un link de activación de tu email',
@@ -120,7 +135,8 @@ const UserForm = () => {
         return;
       }
 
-      if (response.success === 'true') {
+      if ((await response.success) === 'true') {
+        // resetForm();
         setLoading(false);
         setErrorMsg({
           allFieldRequierd: '',
@@ -133,7 +149,7 @@ const UserForm = () => {
         }, 4000);
       }
     } catch (error) {
-      console.log('error', error);
+      console.log('error', error.message);
     }
   };
 
