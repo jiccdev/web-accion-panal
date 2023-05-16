@@ -4,6 +4,7 @@ import ContactFormServices from '@/services/ContactForm';
 import ButtonPrimary from '@/components/Button/ButtonPrimary';
 import Button from '@/components/Button/Button';
 import { iconsList } from '@/components/icons';
+import { realtorData } from '@/data/realtorData';
 
 const RequestDemoForm = ({
   selectedDemo,
@@ -77,13 +78,13 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        'ign.casrod59@gmail.com', // realtor email
+        realtorData?.email, // realtor
         `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
           selectedLandingDemo || ''
         }`
       );
 
-      if (response.success === 'true') {
+      if ((await response.success) === 'true') {
         setLoading(false);
         setErrorMsg({
           allFieldRequierd: '',

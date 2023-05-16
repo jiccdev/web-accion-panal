@@ -10,6 +10,7 @@ const nextConfig = {
       'dummyimage.com',
       'cloudinary.com',
       'res.cloudinary.com',
+      'console.cloudinary.com'
     ],
   },
 };

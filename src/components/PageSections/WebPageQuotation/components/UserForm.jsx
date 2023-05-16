@@ -11,6 +11,7 @@ const UserForm = () => {
   const [errorMsg, setErrorMsg] = useState({
     allFieldRequierd: '',
     serverEmailError: '',
+    networkError: '',
   });
   const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -79,6 +80,18 @@ const UserForm = () => {
     });
   };
 
+  const resetForm = () =>
+    dispatch({
+      type: 'UPDATE_USER',
+      payload: {
+        ...state.user,
+        name: '',
+        phone: '',
+        email: '',
+        terms: false,
+      },
+    });
+
   useEffect(() => {
     dispatch({
       type: 'CREATE_VALIDATION_USER_CODE',
@@ -87,8 +100,6 @@ const UserForm = () => {
       },
     });
   }, []);
-
-  console.log(state);
 
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
@@ -113,15 +124,19 @@ const UserForm = () => {
         state.validationCode?.uniqueCode
       );
 
-      if (response.success === 'false') {
+      console.log(response);
+
+      if ((await response.success) === 'false') {
         setErrorMsg({
-          serverEmailError: 'Debes validar tu email para este servicio',
+          serverEmailError:
+            'Tu correo necesita activación, enviaremos un link de activación de tu email',
         });
         setLoading(false);
         return;
       }
 
-      if (response.success === 'true') {
+      if ((await response.success) === 'true') {
+        // resetForm();
         setLoading(false);
         setErrorMsg({
           allFieldRequierd: '',
@@ -134,7 +149,7 @@ const UserForm = () => {
         }, 4000);
       }
     } catch (error) {
-      console.log('error', error);
+      console.log('error', error.message);
     }
   };
 
@@ -152,7 +167,7 @@ const UserForm = () => {
           Nombre
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="text"
           id="name"
           name="name"
@@ -171,7 +186,7 @@ const UserForm = () => {
           Teléfono
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="phone"
           id="phone"
           name="phone"
@@ -190,7 +205,7 @@ const UserForm = () => {
           E-mail
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-amber-300"
           type="email"
           id="email"
           name="email"

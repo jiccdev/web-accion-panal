@@ -195,7 +195,7 @@ const FormCommunity = () => {
 
                 <div className="flex items-center ml-6 mt-6">
                     <input
-                        id="terms"
+                        id="termsx"
                         type="checkbox"
                         value={formData.terms}
                         onChange={handleTermsChange}
@@ -210,6 +210,12 @@ const FormCommunity = () => {
                             {' '}
                             términos y condiciones{' '}
                         </a>
+                    <label
+                        htmlFor="termsx"
+                        className="ml-2 text-sm font-light text-gray-500"
+                    >
+                        Al continuar estas aceptando los términos y condiciones y la politica
+                        de privacidad
                     </label>
                 </div>
 

@@ -78,7 +78,7 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
 	};
 
 	return (
-		<div className="overflow-y-auto w-full max-w-sm h-screen py-2 transition transform shadow-lg ring-1 ring-[#FAB916] bg-white  divide-y-2 divide-[#d5d7db]">
+		<div className="overflow-y-auto w-full max-w-sm h-screen py-2 transition transform shadow-lg bg-white  divide-y-2 divide-[#d5d7db]">
 			<div className="py-6 px-5">
 				<Logo />
 				<div className="flex flex-col mt-5 text-neutral-700 text-sm">
@@ -94,12 +94,7 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
 				{data.map(_renderItem)}
 			</ul>
 			<div className="flex items-center justify-between py-6 px-5 space-x-2 ">
-				<button href={'/'} className="!px-10 bg-[#e5e7eb] hover:bg-[#cfd1d4]">
-					Contacto
-				</button>
-				<button href={'/'} className="!px-10 bg-[#e5e7eb] hover:bg-[#cfd1d4]">
-					Información
-				</button>
+				<div className='w-[300px]'></div>
 			</div>
 		</div>
 	);

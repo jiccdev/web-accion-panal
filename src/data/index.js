@@ -67,19 +67,19 @@ export const digitalAgeCardData = [
     id: 1,
     title: 'Optimiza tu tiempo',
     desc: 'Te brindamos soluciones que te permitirán gestionar de manera mas rápida y sencilla los procesos.',
-    icon: <SiFastly />,
+    icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250353/Projects/accion-panal/img/icons/svg/1_hwzcmc.svg',
   },
   {
     id: 2,
     title: 'Mayor productividad',
     desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas.',
-    icon: <SiFastly />,
+    icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250376/Projects/accion-panal/img/icons/svg/2_gbahjc.svg',
   },
   {
     id: 3,
     title: 'Ganancias',
     desc: 'Con nuestras herramientas tendrás más oportunidades de cerrar negocios',
-    icon: <SiFastly />,
+    icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250376/Projects/accion-panal/img/icons/svg/3_zktq1i.svg',
   },
 ];
 
