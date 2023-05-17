@@ -1,7 +1,7 @@
 import CarouselCard from '@/components/Carousel/ReactSlick/CarouselCard'
 import ReactSlickComponent from '@/components/Carousel/ReactSlick/ReactSlickComponent'
 import React from 'react'
-import { dataClientsCarousel } from '@/data'
+import { dataClientsCarousel, dataAlianzaCarousel } from '@/data'
 import Section from '@/components/Section/Section'
 import SplideCarousel from '@/components/Carousel/Splide/SplideCarousel'
 import SplideSlideComponent from '@/components/Carousel/Splide/SplideSlide'
@@ -19,16 +19,18 @@ const Clients = () => {
                 />
 
                 <SplideCarousel
-                    data={dataClientsCarousel}
+                    data={dataAlianzaCarousel}
                     RenderedComponent={SplideSlideComponent}
                 />
             </div>
             <div className='mt-20'>
-                <HeadingSection
-                    title="Nuestros Clientes"
-                    alignment="center"
-                    color="violet"
-                />
+                <div className='mb-12'>
+                    <HeadingSection
+                        title="Nuestros Clientes"
+                        alignment="center"
+                        color="violet"
+                    />
+                </div>
                 <ReactSlickComponent
                     RenderComponent={CarouselCard}
                     data={dataClientsCarousel}
