@@ -1,6 +1,20 @@
 import React from 'react'
+import { keyframes } from '@emotion/react';
+import Reveal, { Fade } from 'react-awesome-reveal';
+
 
 const HeroInfo = ({ data }) => {
+    const fadeInUp = keyframes`
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        } `;
 
     const { title, img, children } = data;
 
@@ -10,17 +24,21 @@ const HeroInfo = ({ data }) => {
                 <p className='text-2xl uppercase font-semibold my-9 md:mx-24 w-max relative before:absolute before:content-[""] before:left-0 before:bottom-0 before:h-3 before:w-2/4 before:border-b-4 before:border-panal-orange'>
                     Sobre nosotros
                 </p>
-                <h2 className='text-panal-cyan text-2xl xl:text-5xl uppercase'>
-                    {title}
-                </h2>
-                {children?.map(({ id, strongName, name }) => (
-                    <p key={id} className='my-5'>
-                        <strong>{strongName}</strong> {name}
-                    </p>
-                ))}
+                <Fade direction='left' delay={600} duration={1000} triggerOnce>
+                    <h2 className='text-panal-cyan text-2xl xl:text-5xl uppercase'>
+                        {title}
+                    </h2>
+                    {children?.map(({ id, strongName, name }) => (
+                        <p key={id} className='my-5'>
+                            <strong>{strongName}</strong> {name}
+                        </p>
+                    ))}
+                </Fade>
             </div>
             <div>
-                <img src={img} alt="" />
+                <Reveal keyframes={fadeInUp} delay={300} duration={1000} triggerOnce>
+                    <img src={img} alt="" />
+                </Reveal>
             </div>
         </div>
     )

@@ -217,7 +217,6 @@ const Form = ({ realtorEmail }) => {
 
                 </div>
             </form>
-
         </div>
     )
 }
