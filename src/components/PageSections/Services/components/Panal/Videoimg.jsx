@@ -22,7 +22,7 @@ const Videoimg = () => {
         <div className='relative px-4 bg-white'>
             <div className='flex flex-col justify-center items-center gap-6'>
                 <div className='relative flex justify-center items-center'>
-                    <Image src={imageVideo} alt="" className='select-none h-[400px] w-[900px]' width={800} height={800} />
+                    <Image src={imageVideo} alt="img-video" className='select-none h-[400px] w-[900px]' width={800} height={800} />
                     <button onClick={openModal} className='w-[90px] h-[90px] bg-panal-orange rounded-full absolute flex justify-center items-center z-10 overflow-hidden transition-all duration-700 hover:w-[108px] hover:h-[108px] group'>
                         <span className='content-[""] absolute translate-x-[-40%] -translate-y-2/4 w-0 h-0 z-[100] border-l-[25px] border-l-white border-y-[15px] border-y-transparent border-solid left-2/4 top-2/4 transition-all duration-700 group-hover:border-y-[10rem] group-hover:border-l-[10rem] group-hover:border-l-panal-orange'>
                         </span>

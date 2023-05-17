@@ -42,8 +42,8 @@ const WebDemosAuth = () => {
           setSelectedDemo,
           selectedAdvancedDemo,
           demos: demosBasicData,
-          title: 'Demos Webs basicas',
-          subtitle: 'Este es el subtitulo de demos basica',
+          title: 'Web DEMOS - Páginas básicas',
+          subtitle: 'Elige y Cotiza tu Web Básica',
         }}
       />
 
@@ -70,8 +70,8 @@ const WebDemosAuth = () => {
           selectedLandingDemo,
           setSelectedLandingDemo,
           demos: demosAdvancedData,
-          title: 'Demos Webs avanzadas',
-          subtitle: 'Este es el subtitulo de demos avanzada',
+          title: 'Web DEMOS - Páginas avanzadas',
+          subtitle: 'Elige y Cotiza tu Web Avanzada',
         }}
       />
 
@@ -82,8 +82,8 @@ const WebDemosAuth = () => {
             selectedLandingDemo,
             setSelectedLandingDemo,
             demos: demosLandingsData,
-            title: 'Demos Webs landing pages',
-            subtitle: 'Este es el subtitulo de landings page',
+            title: 'Landing Pages',
+            subtitle: 'Agrega tu Landing Page',
           }}
         />
       ) : null}

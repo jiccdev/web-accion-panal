@@ -11,19 +11,19 @@ function HeadKanje() {
                     SISTEMA AVANZADO DE CANJE
                 </p>
                 <h2 className='text-panal-cyan text-2xl xl:text-5xl uppercase my-10'>
-                    YO CANJEO
+                    YO KANJEO
                 </h2>
                 <span className="my-10 text-md xl:text-xl items-center justify-center text-gray-800">
                     Búsqueda inteligente para conseguir la propiedad adecuada o al cliente interesado en comprar y arrendar
                 </span>
                 <Link to="FormCanje" spy={true} smooth={true} offset={-130} duration={1000}>
                     <div className="my-10">
-                        <Button>CONOCE MÁS DE YO CANJEO</Button>
+                        <Button>CONOCE MÁS DE YO KANJEO</Button>
                     </div>
                 </Link>
             </div>
             <div>
-                <Image src='https://res.cloudinary.com/drd52d73n/image/upload/v1683216056/Panal/imageCanje.png' width="600" height="900" />
+                <Image src='https://res.cloudinary.com/drd52d73n/image/upload/v1683216056/Panal/imageCanje.png' width="600" height="900" alt="img-yo-kanjeo"/>
             </div>
         </div>
 

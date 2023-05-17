@@ -94,7 +94,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <h3 className="text-panal-purple text-xl my-3">Síguenos</h3>
+          {/* <h3 className="text-panal-purple text-xl my-3">Síguenos</h3>
           <div className="flex gap-4">
             <p className="">
               <BsFacebook size="2rem" color={iconColor} />
@@ -105,7 +105,7 @@ const Footer = () => {
             <p className="">
               <BsLinkedin size="2rem" color={iconColor} />
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -24,7 +24,7 @@ const Head = () => {
                 </Link>
             </div>
             <div>
-                <Image src="https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163558/Projects/accion-panal/img/services/png/laptop_ror73c.png" width="600" height="900" />
+                <Image src="https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163558/Projects/accion-panal/img/services/png/laptop_ror73c.png" width="600" height="900" alt="img-plataforma-inmobiliaria"/>
             </div>
         </div>
 

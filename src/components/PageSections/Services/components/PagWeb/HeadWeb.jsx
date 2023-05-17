@@ -24,7 +24,7 @@ function HeadWeb() {
             </div>
 
             <div>
-                <Image src='https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163844/Projects/accion-panal/img/services/png/pantalla_jz7spd.png' width="600" height="900" />
+                <Image src='https://res.cloudinary.com/dvdb33uyj/image/upload/v1684163844/Projects/accion-panal/img/services/png/pantalla_jz7spd.png' width="600" height="900" alt="img-models"/>
 
             </div>
 

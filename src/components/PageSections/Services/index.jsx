@@ -30,7 +30,7 @@ const Services = () => (
       </Formservices>
     </div>
 
-    <div id='yo-canjeo-services'>
+    <div id='yo-kanjeo-services'>
       <Section>
         <HeadKanje></HeadKanje>
         <SystemKanje></SystemKanje>

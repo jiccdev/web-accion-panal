@@ -39,8 +39,8 @@ export const navigationData = [
       },
       {
         id: 2,
-        name: 'Yo canjeo',
-        href: 'yo-canjeo-services',
+        name: 'Yo Kanjeo',
+        href: 'yo-kanjeo-services',
       },
       {
         id: 3,
@@ -97,9 +97,9 @@ export const servicesData = [
   {
     id: 2,
     title: 'Sistema avanzado de canje',
-    subtitle: 'Yo canjeo',
+    subtitle: 'Yo Kanjeo',
     desc: 'Sistema de canje basado en la inteligencia de datos, que te mostrara las unidades disponibles y optimizara el proceso para que sea efectivo.',
-    href: '#yo-canjeo-section',
+    href: '#yo-kanjeo-section',
     src: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683216056/Panal/imageCanje.png',
   },
   {
