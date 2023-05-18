@@ -5,6 +5,7 @@ import Section from '@/components/Section/Section.jsx';
 import HeadWeb from '@/components/PageSections/Services/components/PagWeb/HeadWeb.jsx';
 import PersonalDesign from '@/components/PageSections/Services/components/PagWeb/PersonalDesign.jsx';
 import BeneficWeb from '@/components/PageSections/Services/components/PagWeb/BeneficWeb.jsx';
+import WebPageQuotation from '@/components/PageSections/WebPageQuotation';
 
 const paginaWeb = () => {
   return (
@@ -19,7 +20,9 @@ const paginaWeb = () => {
                     <HeadWeb></HeadWeb>
                     <PersonalDesign></PersonalDesign>
                     <BeneficWeb></BeneficWeb>
+                    
                 </Section>
+                <WebPageQuotation></WebPageQuotation>
             </div>
         </LayoutPage>
     </>  
