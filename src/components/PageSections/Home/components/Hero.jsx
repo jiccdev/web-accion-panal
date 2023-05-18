@@ -32,7 +32,7 @@ const Hero = () => (
           </h1>
 
           <span className="block mt-5 text-md xl:text-xl text-gray-800">
-            Desarrollamos software de gestión y las herramientas mas innovadoras
+            Desarrollamos software de gestión y las herramientas más innovadoras
             del mercado para optimizar el corretaje de propiedades
           </span>
 
