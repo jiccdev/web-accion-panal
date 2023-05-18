@@ -4,10 +4,25 @@ import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react'
 import { iconsList } from '@/components/icons';
 
+import { keyframes } from '@emotion/react';
+import Reveal from 'react-awesome-reveal';
+
 const Demo = () => {
 
-    const imageVideo = 'https://res.cloudinary.com/drd52d73n/image/upload/v1683055003/Panal/video.png';
+    const imageVideo = 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684346311/Projects/accion-panal/img/Demo/video_demo_noqm0n.png';
     const urlVideo = 'https://www.youtube.com/embed/mCdA4bJAGGk';
+
+    const fadeInUp = keyframes`
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }`;
 
     /* MODAL */
     let [isOpen, setIsOpen] = useState(false)
@@ -25,16 +40,18 @@ const Demo = () => {
                 <div className=''>
                     <h2 className='uppercase bg-panal-orange text-white p-4 rounded-xl text-xl'>Conoce nuestro demo</h2>
                 </div>
-                <div className='relative flex justify-center items-center'>
-                    <Image src={imageVideo} alt="img-video" className='select-none' width={800} height={800} />
-                    <button onClick={openModal} className='w-[90px] h-[90px] bg-panal-orange rounded-full absolute flex justify-center items-center z-10 overflow-hidden transition-all duration-700 hover:w-[108px] hover:h-[108px] group'>
-                        <span className='content-[""] absolute translate-x-[-40%] -translate-y-2/4 w-0 h-0 z-[100] border-l-[25px] border-l-white border-y-[15px] border-y-transparent border-solid left-2/4 top-2/4 transition-all duration-700 group-hover:border-y-[10rem] group-hover:border-l-[10rem] group-hover:border-l-panal-orange'>
-                        </span>
-                        <span className='content-[""] absolute translate-x-[-40%] -translate-y-2/4 w-0 h-0 z-[100] border-l-[25px] border-y-[15px] border-y-transparent border-solid left-2/4 top-2/4 transition-all duration-700 group-hover:border-l-white'>
-                        </span>
-                    </button>
-                    <div className='w-[94px] h-[94px] bg-panal-orange rounded-full absolute flex justify-center items-center animate-pingLow'></div>
-                </div>
+                <Reveal keyframes={fadeInUp} delay={300} duration={600} triggerOnce>
+                    <div className='relative flex justify-center items-center'>
+                        <Image src={imageVideo} alt="img-video" className='select-none' width={800} height={800} />
+                        <button onClick={openModal} className='w-[90px] h-[90px] bg-panal-orange rounded-full absolute flex justify-center items-center z-10 overflow-hidden transition-all duration-700 hover:w-[108px] hover:h-[108px] group'>
+                            <span className='content-[""] absolute translate-x-[-40%] -translate-y-2/4 w-0 h-0 z-[100] border-l-[25px] border-l-white border-y-[15px] border-y-transparent border-solid left-2/4 top-2/4 transition-all duration-700 group-hover:border-y-[10rem] group-hover:border-l-[10rem] group-hover:border-l-panal-orange'>
+                            </span>
+                            <span className='content-[""] absolute translate-x-[-40%] -translate-y-2/4 w-0 h-0 z-[100] border-l-[25px] border-y-[15px] border-y-transparent border-solid left-2/4 top-2/4 transition-all duration-700 group-hover:border-l-white'>
+                            </span>
+                        </button>
+                        <div className='w-[94px] h-[94px] bg-panal-orange rounded-full absolute flex justify-center items-center animate-pingLow'></div>
+                    </div>
+                </Reveal>
 
             </div>
 

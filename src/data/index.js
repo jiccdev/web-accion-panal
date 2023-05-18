@@ -92,7 +92,7 @@ export const servicesData = [
     subtitle: 'Panal',
     desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas.',
     href: '#panal-section',
-    src: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683216441/Panal/laptop_ojfzc6.png',
+    src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684359442/Projects/accion-panal/img/about/png/laptop_pf8rqk.png',
   },
   {
     id: 2,
@@ -100,7 +100,7 @@ export const servicesData = [
     subtitle: 'Yo Kanjeo',
     desc: 'Sistema de canje basado en la inteligencia de datos, que te mostrara las unidades disponibles y optimizara el proceso para que sea efectivo.',
     href: '#yo-kanjeo-section',
-    src: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683216056/Panal/imageCanje.png',
+    src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360059/Projects/accion-panal/img/about/png/image3png_khl2vp.png',
   },
   {
     id: 3,
@@ -108,7 +108,7 @@ export const servicesData = [
     subtitle: 'Paginas Web',
     desc: 'Desarrollo y diseño de sitios web responsives para corredores inmobiliarios, con la que podrás sincronizar tus publicaciones con nuestro integrador y hacer crecer tu marca.',
     href: '#paginas-web-section',
-    src: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683215697/Panal/imageDisplay.png',
+    src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360057/Projects/accion-panal/img/about/png/image2png_eyn9nw.png',
   },
 ];
 
@@ -119,7 +119,7 @@ export const mainInfoAbout = [
     id: 1,
     title:
       'Aportamos valor a la labor del corredor de propiedades junto a la innovación',
-    img: 'https://res.cloudinary.com/drd52d73n/image/upload/v1683048443/Panal/image1.png',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360056/Projects/accion-panal/img/about/png/image1png_tqxv3w.png',
     children: [
       {
         id: 1,

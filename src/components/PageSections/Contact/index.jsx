@@ -3,7 +3,7 @@ import FormSection from './components/FormSection';
 
 const Contact = () => (
   <div id='contacto-section'>
-    <FormSection/>
+    <FormSection />
   </div>
 );
 
