@@ -66,7 +66,7 @@ export const digitalAgeCardData = [
   {
     id: 1,
     title: 'Optimiza tu tiempo',
-    desc: 'Te brindamos soluciones que te permitirán gestionar de manera mas rápida y sencilla los procesos.',
+    desc: 'Te brindamos soluciones que te permitirán gestionar de manera más rápida y sencilla los procesos.',
     icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250353/Projects/accion-panal/img/icons/svg/1_hwzcmc.svg',
   },
   {
@@ -105,7 +105,7 @@ export const servicesData = [
   {
     id: 3,
     title: 'Desarrollo Web',
-    subtitle: 'Paginas Web',
+    subtitle: 'Páginas Web',
     desc: 'Desarrollo y diseño de sitios web responsives para corredores inmobiliarios, con la que podrás sincronizar tus publicaciones con nuestro integrador y hacer crecer tu marca.',
     href: '#paginas-web-section',
     src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360057/Projects/accion-panal/img/about/png/image2png_eyn9nw.png',
@@ -124,7 +124,7 @@ export const mainInfoAbout = [
       {
         id: 1,
         strongName: 'Acción Panal',
-        name: 'nace de la necesidad de nuevas e innovadoras herramientas que ayuden a optimizar el corretaje inmobiliario. Creamos un proyecto que cree firmemente en la era digital y la evolucion del mercado inmobiliario en Chile.',
+        name: 'nace de la necesidad de nuevas e innovadoras herramientas que ayuden a optimizar el corretaje inmobiliario. Creamos un proyecto que cree firmemente en la era digital y la evolución del mercado inmobiliario en Chile.',
       },
       {
         id: 2,
