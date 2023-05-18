@@ -4,6 +4,23 @@ import ContactFormServices from '@/services/ContactForm';
 import Alert from '@/components/Alert/Alert';
 
 const Form = ({ realtorEmail }) => {
+
+    const colorText = 'text-white';
+    const [colorsInput, setColors] = useState({
+        label:'text-white',
+        bg:'bg-transparent',
+        border:'border-black',
+        Textplaceholder: 'placeholder-white',
+        focusBorder:'focus:border-white',
+        focusBg:'focus:bg-transparent',
+    });
+    const [colorsButton, setColorsButton] = useState({
+        bg:'bg-white',
+        hoverBg:'hover:bg-gray-300',
+        text:'text-panal-cyan',
+        fill:'fill-panal-cyan',
+    });
+
     const [errorMsg, setErrorMsg] = useState({
         allFieldRequierd: '',
         serverEmailError: '',
@@ -105,16 +122,16 @@ const Form = ({ realtorEmail }) => {
 
     return (
         <div className="my-7 flex flex-col items-center ">
-            <h1 className="text-2xl xl:text-3xl font-extrabold">
+            <h1 className={`text-2xl xl:text-3xl font-extrabold ${colorText}`}>
                 Contáctanos
             </h1>
             <form onSubmit={onFormSubmit} name='FormSubmit'>
                 <div className="w-full flex-1 mt-8">
                     <div className="mx-auto max-w-xs">
                         <div>
-                            <label htmlFor="tel" className='block text-base font-semibold'>Nombre:</label>
+                            <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>Nombre:</label>
                             <input
-                                className="w-full px-8 py-3 rounded-2xl font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 type="text"
                                 id="name"
                                 name="name"
@@ -125,9 +142,9 @@ const Form = ({ realtorEmail }) => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <label htmlFor="tel" className='block text-base font-semibold'>Teléfono:</label>
+                            <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>Teléfono:</label>
                             <input
-                                className="w-full px-8 py-3 rounded-2xl font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 placeholder="+56 9 8765 4321"
                                 type="text"
                                 id="phone"
@@ -139,9 +156,9 @@ const Form = ({ realtorEmail }) => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <label htmlFor="tel" className='block text-base font-semibold'>E-mail:</label>
+                            <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>E-mail:</label>
                             <input
-                                className="w-full px-8 py-3 rounded-2xl font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 type="email"
                                 id="email"
                                 name="email"
@@ -152,14 +169,14 @@ const Form = ({ realtorEmail }) => {
                         </div>
                         <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem] mt-5">
                             <input
-                                className="outline-none relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-md border-[0.125rem] border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-panal-orange checked:bg-panal-orange checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#ca6f3b] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-panal-orange dark:checked:bg-panal-orange"
+                                className={`outline-none relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-md border-[0.125rem] border-solid border-white before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-panal-orange checked:bg-panal-orange checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#ca6f3b] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-white dark:checked:border-panal-orange dark:checked:bg-panal-orange`}
                                 id="terms"
                                 name="terms"
                                 type="checkbox"
                                 value={formData?.terms}
                                 onChange={handleTermsChange}
                             />
-                            <label className="mt-6 text-xs text-gray-600 text-center">
+                            <label className={`mt-6 text-xs ${colorText} text-center`}>
                                 Al continuar estas aceptando los
                                 <a href="#" className="border-b border-gray-500 border-dotted hover:text-panal-orange hover:border-panal-orange"> términos y condiciones </a>
                                 y
@@ -183,13 +200,13 @@ const Form = ({ realtorEmail }) => {
                         </div>
                         <button
                             type="submit"
-                            className="mt-5 tracking-wide font-semibold bg-panal-orange text-gray-100 w-full py-4 rounded-lg hover:bg-panal-yellow transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                            className={`mt-5 tracking-wide font-semibold ${colorsButton.bg} ${colorsButton.text} w-full py-4 rounded-lg ${colorsButton.hoverBg} transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none`}
                         >
                             {loading ? (
                                 <div role="status">
                                     <svg
                                         aria-hidden="true"
-                                        className="inline w-4 h-4 text-gray-100 animate-spin fill-white"
+                                        className={`inline w-4 h-4 ${colorsButton.text} animate-spin ${colorsButton.fill}`}
                                         viewBox="0 0 100 101"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"

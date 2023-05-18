@@ -23,7 +23,7 @@ const FormSection = () => {
     <Section>
       <Reveal keyframes={fadeInUp} delay={300} duration={1000} triggerOnce>
         <div className="min-h-max bg-gray-100 text-gray-900 flex justify-center">
-          <div className="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+          <div className="max-w-screen-xl m-0 sm:mx-20 bg-panal-cyan shadow-2xl sm:rounded-lg flex justify-center flex-1 overflow-hidden">
             <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
               <Fade direction='left' delay={600} duration={800} triggerOnce>
                 <Form realtorEmail={realtorData?.email} />

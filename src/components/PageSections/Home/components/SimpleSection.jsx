@@ -23,7 +23,7 @@ export const SimpleSection = ({ item }) => {
 						</div>
 						<button className='w-max mt-5'>
 							<a href="" className='border-2 transition-all duration-300 rounded-md py-1 px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white w-max'>
-								Mas informacion
+								Más información
 							</a>
 						</button>
 					</div>
@@ -74,7 +74,7 @@ export const SimpleSectionInverted = ({ item }) => {
 						</div>
 						<button className='w-max mt-5'>
 							<a href="" className='border-2 transition-all duration-300 rounded-md py-1 px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white w-max'>
-								Mas informacion
+								Más información
 							</a>
 						</button>
 					</div>
