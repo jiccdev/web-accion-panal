@@ -11,8 +11,8 @@ const ContactBoxServices = () => {
       ellipsed
       className="h-[350px] xl:h-[450px] flex justify-center items-center"
     >
-      <div class="grid grid-cols-3 grid-rows-1 w-[95%] md:w-[90%] lg:w-[80%] xl:w-[60%] h-[200px] xl:h-[280px] bg-white py-4 px-6 rounded-2xl shadow-lg">
-        <div class="col-span-1 bg-red-500">
+      <div className="grid grid-cols-3 grid-rows-1 w-[95%] md:w-[90%] lg:w-[80%] xl:w-[60%] h-[200px] xl:h-[280px] bg-white py-4 px-6 rounded-2xl shadow-lg">
+        <div className="col-span-1 bg-red-500">
           <Image
             src={BoxServicesImg}
             width="auto"
@@ -21,7 +21,7 @@ const ContactBoxServices = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div class="col-span-2 flex flex-col justify-center items-center">
+        <div className="col-span-2 flex flex-col justify-center items-center">
           <div className="text-center w-[90%]">
             <h4 className="uppercase text-lg md:text-2xl xl:text-3xl">
               ¿QUIERES SABER MÁS SOBRE NUESTROS SERVICIOS?

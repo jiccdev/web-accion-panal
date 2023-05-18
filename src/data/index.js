@@ -25,7 +25,7 @@ export const navigationData = [
   {
     id: 2,
     name: 'Nosotros',
-    href: 'nosotros-section',
+    href: '/nosotros',
   },
   {
     id: 3,
