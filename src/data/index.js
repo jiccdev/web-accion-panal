@@ -20,7 +20,7 @@ export const navigationData = [
   {
     id: 1,
     name: 'Inicio',
-    href: 'inicio-section',
+    href: '/',
   },
   {
     id: 2,
@@ -30,29 +30,28 @@ export const navigationData = [
   {
     id: 3,
     name: 'Servicios',
-    href: 'servicios-section',
     children: [
       {
         id: 1,
         name: 'Panal',
-        href: 'panal-services',
+        href: '/servicios/panal',
       },
       {
         id: 2,
         name: 'Yo Kanjeo',
-        href: 'yo-kanjeo-services',
+        href: '/servicios/canjeo/',
       },
       {
         id: 3,
         name: 'Página web',
-        href: 'pagina-web-services',
+        href: '/servicios/paginaWeb/',
       },
     ],
   },
   {
     id: 4,
     name: 'Contacto',
-    href: 'contacto-section',
+    href: '/contacto',
   },
   {
     id: 5,

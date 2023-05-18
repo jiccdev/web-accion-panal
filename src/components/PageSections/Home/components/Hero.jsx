@@ -21,10 +21,7 @@ const fadeInUp = keyframes`
 
 const Hero = () => (
   <Section className="relative">
-    <div
-      id="inicio-section"
-      className="grid grid-cols-1 xl:grid-cols-3 gap-4 place-items-center justify-items-start"
-    >
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 place-items-center justify-items-start">
       <Reveal effect="fadeInUp" duration={1000} delay={500}>
         <div className="flex-shrink-0 mb-10 lg:mb-0 lg:w-full mx-2 xl:mx-0 ml-0 lg:ml-24 xl:ml-24">
           <h1 className="text-2xl font-bold xl:text-5xl text-teal-500">
