@@ -11,7 +11,7 @@ const ContactBoxServices = () => {
       ellipsed
       className="h-[350px] xl:h-[450px] flex justify-center items-center"
     >
-      <div class="grid grid-cols-3 grid-rows-1 w-[95%] md:w-[90%] lg:w-[80%] xl:w-[60%] h-[200px] xl:h-[280px] bg-white py-4 px-6 rounded-2xl">
+      <div class="grid grid-cols-3 grid-rows-1 w-[95%] md:w-[90%] lg:w-[80%] xl:w-[60%] h-[200px] xl:h-[280px] bg-white py-4 px-6 rounded-2xl shadow-lg">
         <div class="col-span-1 bg-red-500">
           <Image
             src={BoxServicesImg}
