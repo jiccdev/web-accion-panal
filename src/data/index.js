@@ -66,13 +66,13 @@ export const digitalAgeCardData = [
   {
     id: 1,
     title: 'Optimiza tu tiempo',
-    desc: 'Te brindamos soluciones que te permitirán gestionar de manera mas rápida y sencilla los procesos.',
+    desc: 'Te brindamos soluciones que te permitirán gestionar de manera más rápida y sencilla los procesos',
     icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250353/Projects/accion-panal/img/icons/svg/1_hwzcmc.svg',
   },
   {
     id: 2,
     title: 'Mayor productividad',
-    desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas.',
+    desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas',
     icon: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684250376/Projects/accion-panal/img/icons/svg/2_gbahjc.svg',
   },
   {
@@ -155,23 +155,23 @@ export const statsClients = [
 
 export const dataAlianzaCarousel = [
   {
-    id:1,
-    title:'TrueCapital',
-    img:'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292268/Projects/accion-panal/img/logo/png/truecapital_tdeyxk.png',
-    href:'https://www.truecapital.cl/',
+    id: 1,
+    title: 'TrueCapital',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292268/Projects/accion-panal/img/logo/png/truecapital_tdeyxk.png',
+    href: 'https://www.truecapital.cl/',
   },
   {
-    id:2,
-    title:'Partners and Advisers',
-    img:'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292270/Projects/accion-panal/img/logo/png/partners_y8vcbr.png',
-    href:'https://partnersadvisers.cl/',
+    id: 2,
+    title: 'Partners and Advisers',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292270/Projects/accion-panal/img/logo/png/partners_y8vcbr.png',
+    href: 'https://partnersadvisers.cl/',
   },
   {
-    id:3,
-    title:'AssetPlan',
-    img:'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292267/Projects/accion-panal/img/logo/png/assetplan_b9ktgj.png',
-    href:'https://www.assetplan.cl/',
-  }
+    id: 3,
+    title: 'AssetPlan',
+    img: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684292267/Projects/accion-panal/img/logo/png/assetplan_b9ktgj.png',
+    href: 'https://www.assetplan.cl/',
+  },
 ];
 
 export const dataClientsCarousel = [
