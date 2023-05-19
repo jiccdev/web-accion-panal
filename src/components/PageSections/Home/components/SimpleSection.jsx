@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Image from 'next/image';
 import { Fade } from "react-awesome-reveal";
-
+import Button from '@/components/Button/Button';
 
 const margin = 'mt-18 xl:mt-32';
 const paddingContent = 'px-7 py-7';
@@ -21,11 +21,9 @@ export const SimpleSection = ({ item }) => {
 							</h2>
 							<p className='text-[#A0A0A0]'>{desc}</p>
 						</div>
-						<button className='w-max mt-5'>
-							<a href="" className='border-2 transition-all duration-300 rounded-md py-1 px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white w-max'>
-								Más información
-							</a>
-						</button>
+						<Button href={href} className='w-max mt-5 border-2 transition-all duration-300 rounded-md px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white'>
+							Más información
+						</Button>
 					</div>
 				</Fade>
 				<Fade direction='right' triggerOnce>
@@ -72,11 +70,9 @@ export const SimpleSectionInverted = ({ item }) => {
 							</h2>
 							<p className='text-[#A0A0A0]'>{desc}</p>
 						</div>
-						<button className='w-max mt-5'>
-							<a href="" className='border-2 transition-all duration-300 rounded-md py-1 px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white w-max'>
-								Más información
-							</a>
-						</button>
+						<Button href={href} className='w-max mt-5 border-2 transition-all duration-300 rounded-md px-3 border-panal-orange text-panal-orange hover:bg-panal-orange hover:text-white'>
+							Más información
+						</Button>
 					</div>
 				</Fade>
 

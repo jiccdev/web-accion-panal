@@ -34,7 +34,7 @@ const Hero = () => (
           </span>
 
           <div className="my-5">
-            <Button>Más información</Button>
+            <Button href='/servicios/panal'>Más información</Button>
           </div>
         </div>
       </Reveal>

@@ -39,12 +39,12 @@ export const navigationData = [
       {
         id: 2,
         name: 'Yo Kanjeo',
-        href: '/servicios/canjeo/',
+        href: '/servicios/kanjeo',
       },
       {
         id: 3,
         name: 'Página web',
-        href: '/servicios/paginaWeb/',
+        href: '/servicios/paginaWeb',
       },
     ],
   },
@@ -90,7 +90,7 @@ export const servicesData = [
     title: 'Software Inmobiliario',
     subtitle: 'Panal',
     desc: 'Mejora las métricas de eficiencia de tu negocio con la tecnología con la que desarrollamos nuestras herramientas.',
-    href: '#panal-section',
+    href: '/servicios/panal',
     src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684359442/Projects/accion-panal/img/about/png/laptop_pf8rqk.png',
   },
   {
@@ -98,7 +98,7 @@ export const servicesData = [
     title: 'Sistema avanzado de canje',
     subtitle: 'Yo Kanjeo',
     desc: 'Sistema de canje basado en la inteligencia de datos, que te mostrara las unidades disponibles y optimizara el proceso para que sea efectivo.',
-    href: '#yo-kanjeo-section',
+    href: '/servicios/kanjeo',
     src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360059/Projects/accion-panal/img/about/png/image3png_khl2vp.png',
   },
   {
@@ -106,7 +106,7 @@ export const servicesData = [
     title: 'Desarrollo Web',
     subtitle: 'Páginas Web',
     desc: 'Desarrollo y diseño de sitios web responsives para corredores inmobiliarios, con la que podrás sincronizar tus publicaciones con nuestro integrador y hacer crecer tu marca.',
-    href: '#paginas-web-section',
+    href: 'servicios/paginaWeb',
     src: 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1684360057/Projects/accion-panal/img/about/png/image2png_eyn9nw.png',
   },
 ];

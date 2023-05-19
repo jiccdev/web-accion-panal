@@ -29,7 +29,7 @@ const ContactBoxServices = () => {
           </div>
 
           <div className="mt-3 xl:mt-9">
-            <Button href="#" className="bg-amber-500">
+            <Button href="/contacto" className="bg-amber-500">
               Contactanos
             </Button>
           </div>
