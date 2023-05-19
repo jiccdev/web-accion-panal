@@ -5,7 +5,7 @@ import UserEmailValidation from './components/UserEmailValidation';
 import TabGroup from '@/components/Tabs/TabGroup';
 
 const WebPageQuotation = () => {
-  const tabListData = ['Datos Personales', 'Valida tu email'];
+  const tabListData = ['D. Personales', 'Valida tu email'];
 
   return (
     <Section
@@ -15,7 +15,7 @@ const WebPageQuotation = () => {
     >
       <div
         id="form-demos"
-        className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[35%] rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10"
+        className="rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10"
       >
         <h3 className="uppercase text-center text-lg xl:text-2xl text-gray-700 border-b mb-6">
           Cotiza tú página web inmobiliaria
