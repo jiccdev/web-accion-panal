@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import AccionPanalLogo from '../../assets/img/logo/accion-panal-logo.png';
+import AccionPanalLogo from '../../assets/img/logo/accion-panal-logo.webp';
 
 const Logo = () => {
   return (

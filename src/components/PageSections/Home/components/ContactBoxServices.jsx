@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '@/components/Section/Section';
 import Image from 'next/image';
 import Button from '@/components/Button/Button';
-import BoxServicesImg from '../../../../assets/img/servics/box-services.png';
+import BoxServicesImg from '../../../../assets/img/servics/box-services.webp';
 
 const ContactBoxServices = () => {
   return (
