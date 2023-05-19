@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '../Section/Section';
 import Link from 'next/link';
 import Image from 'next/image';
-import AccionPanalLogo from '../../assets/img/logo/accion-panal-logo.png';
+import AccionPanalLogo from '../../assets/img/logo/accion-panal-logo.webp';
 import { iconsList } from '../icons';
 
 const Footer = () => {
