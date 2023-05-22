@@ -33,7 +33,7 @@ const FormSection = () => {
             <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
               <div className="w-full bg-contain bg-center bg-no-repeat">
                 <img
-                  src="https://fastly.picsum.photos/id/1033/1920/1080.jpg?hmac=PFeRtI5OXUqS7PbTPluUptCJV9_ZF4s_kN3P6teC8dI"
+                  src="https://res.cloudinary.com/dvdb33uyj/image/upload/v1684771318/Projects/accion-panal/img/contact/png/contact_sza1d6.png"
                   alt=""
                   className="object-cover h-full"
                 />

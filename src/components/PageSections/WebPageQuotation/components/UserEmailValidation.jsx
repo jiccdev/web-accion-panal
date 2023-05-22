@@ -63,7 +63,10 @@ const UserEmailValidation = () => {
         </small>
       </div>
 
-      <form onSubmit={onFormSubmit} className="">
+      <form onSubmit={onFormSubmit}
+        className="w-full bg-white p-5"
+
+      >
         <div className="flex flex-row">
           <input
             type="text"

@@ -15,13 +15,13 @@ const WebPageQuotation = () => {
     >
       <div
         id="form-demos"
-        className="rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10"
+        className="rounded-xl bg-white shadow-md p-4 md:p-6 xl:p-10 w-[100%] lg:w-[60%] xl:w-[40%]"
       >
         <h3 className="uppercase text-center text-lg xl:text-2xl text-gray-700 border-b mb-6">
           Cotiza tú página web inmobiliaria
         </h3>
 
-        <div className="w-[100%]" id='FormWeb'>
+        <div className="" id='FormWeb'>
           <TabGroup
             tabListData={tabListData}
             tabPanel0={<UserForm />}

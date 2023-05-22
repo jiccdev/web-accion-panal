@@ -124,7 +124,6 @@ const UserForm = () => {
         state.validationCode?.uniqueCode
       );
 
-      console.log(response);
 
       if ((await response.success) === 'false') {
         setErrorMsg({

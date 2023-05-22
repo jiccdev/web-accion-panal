@@ -100,13 +100,13 @@ const FormDesign = () => {
   };
 
   return (
-    <div className="flex flex-wrap w-[100%] sm:w-[90%] md:w-[80%] lg:w-[80%] xl:w-[95%] rounded-2xl bg-white shadow-2xl p-4 md:p-6 xl:p-10">
+    <div className="flex flex-wrap w-[100%] sm:w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] rounded-2xl bg-white shadow-2xl p-4 md:p-6 xl:p-10">
       <form
         onSubmit={onFormSubmit}
         name="FormSubmit"
         className="w-full h-full bg-white p-2"
       >
-        <h2 className="text-center font-bold mb-10 text-3xl">
+        <h2 className="text-center font-bold mb-10 text-xl xl:text-3xl">
           ¡HAZ CANJE DE MANERA SENCILLA Y EFICAZ Y TEN MÁS INGRESOS!
         </h2>
         <div className="mb-4">
