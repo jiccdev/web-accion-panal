@@ -3,7 +3,7 @@ import { UserContext } from '@/context/user/UserContext';
 import ContactFormServices from '@/services/ContactForm';
 import Button from '@/components/Button/Button';
 import Alert from '@/components/Alert/Alert';
-import { realtorData } from '@/data/realtorData';
+import { contactAccionPanalData } from '@/data/realtorData';
 
 const FormCommunity = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +79,7 @@ const FormCommunity = () => {
         formData?.name,
         formData?.email,
         formData?.phone,
-        realtorData?.email
+        contactAccionPanalData?.email
       );
       if (response.success === 'true') {
         setErrorMsg({
