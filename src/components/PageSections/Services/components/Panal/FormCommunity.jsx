@@ -92,14 +92,20 @@ const FormCommunity = () => {
       /** FormSubmit Service */
       setLoading(true);
       const response = await ContactFormServices.sendContactForm(
+        'Acción Panal',
         formData?.name,
         formData?.email,
         formData?.phone,
         contactAccionPanalData?.email
       );
 
+      console.log(response);
+
       /** Api Service */
       const apiResponse = await ContactApiFormServices.addContactForm(formData)
+
+      console.log(apiResponse);
+
 
       if (response.success === 'true' && apiResponse.status === "ok") {
         setLoading(false);
@@ -115,7 +121,6 @@ const FormCommunity = () => {
           setSuccessMsg({
             formSubmitMsg: '',
             formApiMsg: ''
-
           });
           resetForm();
           window.location.reload()
@@ -129,6 +134,8 @@ const FormCommunity = () => {
     }
   };
 
+
+  console.log('FormData', formData);
 
 
   return (
