@@ -1,37 +1,49 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '@/context/user/UserContext';
+import React, { useState } from 'react';
 import ContactFormServices from '@/services/ContactForm';
+import ContactApiFormServices from '@/services/ContactApiForm';
 import Alert from '@/components/Alert/Alert';
+import { contactAccionPanalData } from '@/data/realtorData';
+import { companyData } from '@/data/company';
 
 const Form = ({ realtorEmail }) => {
 
     const colorText = 'text-white';
     const [colorsInput, setColors] = useState({
-        label:'text-white',
-        bg:'bg-transparent',
-        border:'border-black',
+        label: 'text-white',
+        bg: 'bg-transparent',
+        border: 'border-black',
         Textplaceholder: 'placeholder-white',
-        focusBorder:'focus:border-white',
-        focusBg:'focus:bg-transparent',
+        focusBorder: 'focus:border-white',
+        focusBg: 'focus:bg-transparent',
     });
     const [colorsButton, setColorsButton] = useState({
-        bg:'bg-white',
-        hoverBg:'hover:bg-gray-300',
-        text:'text-panal-cyan',
-        fill:'fill-panal-cyan',
+        bg: 'bg-white',
+        hoverBg: 'hover:bg-gray-300',
+        text: 'text-panal-cyan',
+        fill: 'fill-panal-cyan',
     });
 
     const [errorMsg, setErrorMsg] = useState({
         allFieldRequierd: '',
         serverEmailError: '',
     });
-    const [successMsg, setSuccessMsg] = useState('');
+    // const [successMsg, setSuccessMsg] = useState('');
+    const [successMsg, setSuccessMsg] = useState({
+        formSubmitMsg: '',
+        formApiMsg: ''
+    });
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
-        terms: false,
+        termsAndConditions: false,
+        companyId: companyData.companyId,
+        action: 'Contacto (Servicio de Contacto)',
+        message: 'Contacto (Servicio de Contacto)',
+        subject: 'Contacto (Servicio de Contacto)',
+        lastName: '...',
+        meetingDate: "No indicada"
     });
 
     /** Handle Name change */
@@ -62,28 +74,31 @@ const Form = ({ realtorEmail }) => {
     const handleTermsChange = (ev) => {
         setFormData({
             ...formData,
-            terms: ev.target.checked,
+            termsAndConditions: ev.target.checked,
         });
     };
 
     /** Handle Terms and Conditions change */
-    const EmptyForm = () => {
+    const resetForm = () => {
         setFormData({
-            ...formData,
             name: '',
             phone: '',
             email: '',
-            terms: false,
+            termsAndConditions: false,
+            companyId: companyData.companyId,
+            action: 'Servicios: Contacto (Panal)',
+            message: 'Servicios: Contacto (Panal)',
+            subject: 'Servicios: Contacto (Panal)',
+            lastName: '...',
+            meetingDate: "..."
         });
     };
+
 
     const onFormSubmit = async (ev) => {
         ev.preventDefault();
 
-        if (
-            Object.values(formData).includes('') ||
-            formData?.terms === false
-        ) {
+        if (Object.values(formData).includes('') || formData?.termsAndConditions === false) {
             setErrorMsg({
                 allFieldRequierd:
                     'Por favor, completa todos los campos y acepta los terminos y condiciones',
@@ -92,32 +107,45 @@ const Form = ({ realtorEmail }) => {
         }
 
         try {
+            /** FormSubmit Service */
             setLoading(true);
             const response = await ContactFormServices.sendContactForm(
+                'Acción Panal',
                 formData?.name,
                 formData?.email,
                 formData?.phone,
-                realtorEmail
-            )
-            if (response.success === 'true') {
+                contactAccionPanalData?.email
+            );
+            /** Api Service */
+            const apiResponse = await ContactApiFormServices.addContactForm(formData)
+
+            if (response.success === 'true' && apiResponse.status === "ok") {
+                setLoading(false);
                 setErrorMsg({
                     allFieldRequierd: '',
                     serverEmailError: '',
                 });
-                setSuccessMsg('Con exito! Un ejecutivo se contactara contigo');
-                setLoading(false);
-                setTimeout(() => {
-                    setSuccessMsg('');
-                }, 4000);
-            }
-            EmptyForm();
-            return;
+                setSuccessMsg({
+                    formSubmitMsg: 'Solicitud enviada con exito! Un ejecutivo se contactara contigo',
+                    formApiMsg: 'Success!!!'
 
+                });
+                setTimeout(() => {
+                    setSuccessMsg({
+                        formSubmitMsg: '',
+                        formApiMsg: ''
+
+                    });
+                    resetForm();
+                    window.location.reload()
+                }, 3000);
+            }
         } catch (error) {
             setLoading(false);
-            console.log('error', error);
+            setErrorMsg({
+                serverEmailError: 'Oh! Ha ocurrido un error al enviar tu solicitud'
+            })
         }
-
     }
 
     return (
@@ -131,7 +159,7 @@ const Form = ({ realtorEmail }) => {
                         <div>
                             <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>Nombre:</label>
                             <input
-                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
+                                className={`w-full text-white px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 type="text"
                                 id="name"
                                 name="name"
@@ -144,25 +172,24 @@ const Form = ({ realtorEmail }) => {
                         <div className='mt-5'>
                             <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>Teléfono:</label>
                             <input
-                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
+                                className={`w-full text-white px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 placeholder="+56 9 8765 4321"
-                                type="text"
+                                type="phone"
                                 id="phone"
                                 name="phone"
-                                pattern="[0-9]{9}"
-                                maxLength="9"
+                                maxLength={9}
                                 value={formData?.phone}
                                 onChange={handlePhoneChange}
                             />
                         </div>
                         <div className='mt-5'>
-                            <label htmlFor="tel" className={`block text-base font-medium ${colorsInput.label}`}>E-mail:</label>
+                            <label htmlFor="email" className={`block text-base font-medium ${colorsInput.label}`}>E-mail:</label>
                             <input
-                                className={`w-full px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
+                                className={`w-full text-white px-8 py-3 rounded-2xl font-medium ${colorsInput.bg} border ${colorsInput.bordergray} ${colorsInput.Textplaceholder} text-sm focus:outline-none ${colorsInput.focusBorder} ${colorsInput.focusBg}`}
                                 type="email"
                                 id="email"
                                 name="email"
-                                value={formData?.email}
+                                value={formData.email}
                                 onChange={handleEmailChange}
                                 placeholder="ejemplo@gmail.com"
                             />
@@ -173,7 +200,7 @@ const Form = ({ realtorEmail }) => {
                                 id="terms"
                                 name="terms"
                                 type="checkbox"
-                                value={formData?.terms}
+                                value={formData?.termsAndConditions}
                                 onChange={handleTermsChange}
                             />
                             <label className={`mt-6 text-xs ${colorText} text-center`}>
@@ -187,10 +214,10 @@ const Form = ({ realtorEmail }) => {
                             {errorMsg.allFieldRequierd && (
                                 <Alert errorMsg={errorMsg.allFieldRequierd} />)}
 
-                            {successMsg && (
+                            {successMsg?.formSubmitMsg && (
                                 <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50"
                                     role="alert">
-                                    {successMsg}
+                                    {successMsg?.formSubmitMsg}
                                 </div>)}
                         </div>
 

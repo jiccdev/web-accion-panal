@@ -3,5 +3,6 @@ export const realtorData = {
 };
 
 export const contactAccionPanalData = {
-  email: 'contacto@accionpanal.com',
+  // email: 'contacto@accionpanal.com',
+  email: 'ign.casrod59@gmail.com',
 };
