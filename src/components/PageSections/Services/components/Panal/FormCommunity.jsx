@@ -99,13 +99,8 @@ const FormCommunity = () => {
         contactAccionPanalData?.email
       );
 
-      console.log(response);
-
       /** Api Service */
       const apiResponse = await ContactApiFormServices.addContactForm(formData)
-
-      console.log(apiResponse);
-
 
       if (response.success === 'true' && apiResponse.status === "ok") {
         setLoading(false);
@@ -133,9 +128,6 @@ const FormCommunity = () => {
       })
     }
   };
-
-
-  console.log('FormData', formData);
 
 
   return (
