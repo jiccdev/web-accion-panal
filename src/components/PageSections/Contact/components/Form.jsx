@@ -6,7 +6,6 @@ import { contactAccionPanalData } from '@/data/realtorData';
 import { companyData } from '@/data/company';
 
 const Form = ({ realtorEmail }) => {
-
     const colorText = 'text-white';
     const [colorsInput, setColors] = useState({
         label: 'text-white',
@@ -116,6 +115,7 @@ const Form = ({ realtorEmail }) => {
                 formData?.phone,
                 contactAccionPanalData?.email
             );
+            
             /** Api Service */
             const apiResponse = await ContactApiFormServices.addContactForm(formData)
 
