@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../Section/Section';
 import Link from 'next/link';
+import Section from '../Section/Section';
 import Image from 'next/image';
 import AccionPanalLogo from '../../assets/img/logo/accion-panal-logo.webp';
 import { iconsList } from '../icons';
@@ -13,15 +13,18 @@ const Footer = () => {
   return (
     <footer className="flex justify-center bg-white">
       <div className="max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-start gap-5 p-8">
-        <div className="w-full xl:p-10">
-          <Image
-            src={AccionPanalLogo}
-            alt="unne-logo"
-            width={115}
-            height={200}
-            className="h-auto w-full max-w-[330px]"
-          />
-        </div>
+        <Link href="/">
+          <div className="w-full xl:p-10">
+            <Image
+              src={AccionPanalLogo}
+              alt="unne-logo"
+              width={115}
+              height={200}
+              className="h-auto w-full  max-w-[150px] xl:max-w-[330px]"
+            />
+          </div>
+        </Link>
+
 
         <div className="w-full">
           <h3 className="text-panal-purple text-xl">Encuentrános</h3>

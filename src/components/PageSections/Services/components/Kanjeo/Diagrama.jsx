@@ -27,7 +27,7 @@ function Diagrama() {
         <div className='flex justify-center items-center mt-32 flex-col'>
             <div className='max-w-[1200px] w-full text-center items-center'>
                 <HeadingSection
-                    title="DIAGRAMA O DEMO DE COMO FUNCIONA"
+                    title="¿CÓMO FUNCIONA?"
                     subtitle=""
                     alignment="center"
                     color="violet"
@@ -35,11 +35,11 @@ function Diagrama() {
             </div>
 
             <div className="flex justify-center items-center">
-                <Reveal effect={fadeInUp} duration={1000} delay={500}>
-                    <div className="w-[100%]">
-                        <Image src={DiagramUi} width="full" height="full" alt="img-diagram" className="w-[100%]" />
-                    </div>
-                </Reveal>
+
+                <div className="w-[100%]">
+                    <Image src={DiagramUi} width="full" height="full" alt="img-diagram" className="w-[100%]" />
+                </div>
+
             </div>
 
         </div>

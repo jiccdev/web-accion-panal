@@ -33,17 +33,17 @@ const WhyWe = () => {
     return (
         <div className='justify-center items-center mt-20'>
             <div className='flex justify-center items-center'>
-                <Reveal effect="fadeInUp" duration={1000} delay={500}>
-                    <div className='max-w-[1300px] w-full'>
 
-                        <HeadingSection
-                            title="¿Por Qué unirte a nuestra plataforma?"
-                            subtitle=""
-                            alignment="center"
-                            color="violet"
-                        />
-                    </div>
-                </Reveal>
+                <div className='max-w-[1300px] w-full'>
+
+                    <HeadingSection
+                        title="¿Por Qué unirte a nuestra plataforma?"
+                        subtitle=""
+                        alignment="center"
+                        color="violet"
+                    />
+                </div>
+
             </div>
 
 

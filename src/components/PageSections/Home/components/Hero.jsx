@@ -3,7 +3,7 @@ import Reveal from 'react-awesome-reveal';
 import Image from 'next/image';
 import Section from '@/components/Section/Section';
 import Button from '@/components/Button/Button';
-import HeroImg from '../../../../assets/img/hero/main-hero.svg';
+import HeroImg from '../../../../assets/img/hero/hero.svg';
 import { keyframes } from '@emotion/react';
 
 const fadeInUp = keyframes`
