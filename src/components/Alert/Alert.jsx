@@ -3,7 +3,7 @@ import React from 'react';
 const Alert = ({ errorMsg }) => {
   return (
     <div
-      className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+      className="flex p-4 text-sm rounded-full mt-3 text-red-800 bg-red-50"
       role="alert"
     >
       {errorMsg}

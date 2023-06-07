@@ -20,13 +20,28 @@ const ContactFormServices = {
     return response.data;
   },
 
-  sendFormToRealtor: async (name, userEmail, phone, realtorEmail, demos) => {
+  sendFormToRealtor: async (
+    name,
+    userEmail,
+    phone,
+    hasDomain,
+    domainName,
+    realtorEmail,
+    demos
+  ) => {
+    let hasDom =
+      hasDomain === 'Si posee'
+        ? 'Nombre_del_Dominio'
+        : 'Nombre_del_dominio_a_buscar';
+
     const response = await axios.post(
       `https://formsubmit.co/ajax/${realtorEmail}`,
       {
         Nombre: name,
         Correo: userEmail,
         Telefono: phone,
+        Cuenta_con_dominio: hasDomain,
+        [hasDom]: domainName,
         Demos_Seleccionadas: demos,
       },
       {

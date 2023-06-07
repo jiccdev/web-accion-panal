@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '@/context/user/UserContext';
 import ContactFormServices from '@/services/ContactForm';
-import ButtonPrimary from '@/components/Button/ButtonPrimary';
+import Alert from '@/components/Alert/Alert';
 import Button from '@/components/Button/Button';
 import { iconsList } from '@/components/icons';
 import { realtorData } from '@/data/realtorData';
+import { userDomainData } from '@/data';
 
 const RequestDemoForm = ({
   selectedDemo,
@@ -19,6 +20,9 @@ const RequestDemoForm = ({
     allFieldRequierd: '',
     serverEmailError: '',
   });
+  const [optionDomain, setOptionDomain] = useState('');
+  const [domainName, setDomainName] = useState('');
+  const [domain2Name, setDomain2Name] = useState('');
   const { MdWeb } = iconsList;
 
   const renderSelectedDemos = [
@@ -69,8 +73,27 @@ const RequestDemoForm = ({
     });
   };
 
+  const handleOptionDomain = (ev) => setOptionDomain(ev.target.value);
+  const handleDomainName = (ev) => setDomainName(ev.target.value);
+  const handleDomain2Name = (ev) => setDomain2Name(ev.target.value);
+
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
+
+    if (
+      (optionDomain === '1' && domainName?.length === 0) ||
+      (optionDomain === '2' && domain2Name?.length === 0)
+    ) {
+      setErrorMsg({
+        allFieldRequierd: 'Debes ingresar un dominio',
+      });
+      setTimeout(() => {
+        setErrorMsg({
+          allFieldRequierd: '',
+        });
+      }, 2500);
+      return;
+    }
 
     try {
       setLoading(true);
@@ -78,9 +101,10 @@ const RequestDemoForm = ({
         state.user?.name,
         state.user?.email,
         state.user?.phone,
-        realtorData?.email, // realtor
-        `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${
-          selectedLandingDemo || ''
+        optionDomain === '1' ? 'Si posee' : 'No posee',
+        domainName || domain2Name,
+        realtorData?.email,
+        `${selectedDemo || ''} - ${selectedAdvancedDemo || ''} - ${selectedLandingDemo || ''
         }`
       );
 
@@ -90,16 +114,84 @@ const RequestDemoForm = ({
           allFieldRequierd: '',
           serverEmailError: '',
         });
-
+        setOptionDomain('');
+        setDomainName('');
+        setDomain2Name('');
         setSuccessMsg(
           'Solicitud enviada exitosamente, dentro de poco de contactaremos'
         );
         setTimeout(() => {
           setSuccessMsg('');
-        }, 4000);
+          window.location.reload();
+        }, 2500);
       }
     } catch (error) {
-      console.log('error', error);
+      console.error('error', error);
+    }
+  };
+
+  const handleInputDomainSelected = (selected) => {
+    switch (selected) {
+      case '1':
+        return (
+          <div>
+            <input
+              className="w-full px-4 py-2 border-amber-300 rounded-full focus:outline-none border-4"
+              type="text"
+              id="domainOption1"
+              name="domainOption1"
+              value={domainName}
+              onChange={handleDomainName}
+              placeholder="Ingrese su dominio, ej: midominio.cl"
+            />
+            {errorMsg.allFieldRequierd && (
+              <Alert errorMsg={errorMsg.allFieldRequierd} />
+            )}
+          </div>
+        );
+      case '2':
+        return (
+          <div>
+            <input
+              className="w-full px-4 py-2 border-amber-300 rounded-full focus:outline-none border-4"
+              type="text"
+              id="domainOption2"
+              name="domainOption2"
+              value={domain2Name}
+              onChange={handleDomain2Name}
+              placeholder="Nombre del dominio que desea, ej: minuevodominio.cl"
+            />
+
+            <div
+              className="flex p-4 text-sm rounded-full mt-3 text-blue-800 bg-blue-50"
+              role="alert"
+            >
+              <svg
+                aria-hidden="true"
+                className="flex-shrink-0 inline w-5 h-5 mr-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <span className="sr-only">Info</span>
+              <div>
+                Le enviaremos los dominios disponibles, similares al ingresado
+              </div>
+            </div>
+
+            {errorMsg.allFieldRequierd && (
+              <Alert errorMsg={errorMsg.allFieldRequierd} />
+            )}
+          </div>
+        );
+      default:
+        break;
     }
   };
 
@@ -112,6 +204,35 @@ const RequestDemoForm = ({
         <div className="flex flex-col justify-between leading-normal rounded-md mb-3">
           {renderSelectedDemos}
         </div>
+
+        <div className="flex flex-col justify-between leading-normal rounded-md mb-3">
+          <p>Dominios para su página web:</p>
+
+          <div className="flex justify-between flex-col p-5 border w-full my-1">
+            <div className="w-[80%] xl:w-[50%] mx-auto flex justify-between items-center cursor-pointer">
+              {userDomainData.map((option) => (
+                <div key={option.id} className="flex items-center">
+                  <input
+                    id={option.label}
+                    type="radio"
+                    name="option"
+                    value={option.id}
+                    onChange={handleOptionDomain}
+                    className="w-6 h-6 border-2 border-gray-400 rounded-full cursor-pointer"
+                  />
+                  <label htmlFor={option.label} className="ml-2 cursor-pointer">
+                    {option.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+            {optionDomain && (
+              <div className="mt-5">
+                {handleInputDomainSelected(optionDomain)}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="mb-4">
@@ -122,7 +243,7 @@ const RequestDemoForm = ({
           Nombre
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2"
           type="text"
           id="name"
           name="name"
@@ -142,7 +263,7 @@ const RequestDemoForm = ({
           Teléfono
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2"
           type="phone"
           id="phone"
           name="phone"
@@ -162,7 +283,7 @@ const RequestDemoForm = ({
           E-mail
         </label>
         <input
-          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2 focus:shadow-sm focus:border-indigo-500"
+          className="w-full px-4 py-2 border-gray-300 rounded-full focus:outline-none border-2"
           type="email"
           id="email"
           name="email"

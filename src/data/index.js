@@ -271,3 +271,15 @@ export const BeneficIcons = [
     icon: <SlBadge />,
   },
 ];
+
+// User domain choice
+export const userDomainData = [
+  {
+    id: 1,
+    label: 'Si tengo',
+  },
+  {
+    id: 2,
+    label: 'No tengo',
+  },
+];
