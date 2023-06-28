@@ -102,6 +102,17 @@ const FormCommunity = () => {
       /** Api Service */
       const apiResponse = await ContactApiFormServices.addContactForm(formData)
 
+      if (response?.success === 'false') {
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError:
+            'Se necesita activación de email del administrador/a',
+        });
+        setLoading(false);
+        resetForm();
+        return;
+      }
+
       if (response.success === 'true' && apiResponse.status === "ok") {
         setLoading(false);
         setErrorMsg({

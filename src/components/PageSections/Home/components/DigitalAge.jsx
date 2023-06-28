@@ -10,7 +10,7 @@ const DigitalAge = () => {
   ));
 
   return (
-    <Section className="h-auto mx-auto w-[95%] md:w-[90%] xl:w-[75%]">
+    <Section className="h-auto mx-auto w-[95%] md:w-[90%] ">
       <HeadingSection
         title="Apostamos a la era digital"
         subtitle="Impulsa tu negocio inmobiliario con las mejores herramientas"
@@ -18,7 +18,7 @@ const DigitalAge = () => {
         color="violet"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
         {renderedCards}
       </div>
     </Section>

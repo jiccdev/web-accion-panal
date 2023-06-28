@@ -115,9 +115,20 @@ const Form = ({ realtorEmail }) => {
                 formData?.phone,
                 contactAccionPanalData?.email
             );
-            
+
             /** Api Service */
             const apiResponse = await ContactApiFormServices.addContactForm(formData)
+
+            if (response?.success === 'false') {
+                setErrorMsg({
+                    allFieldRequierd: '',
+                    serverEmailError:
+                        'Se necesita activación de email del administrador/a',
+                });
+                setLoading(false);
+                resetForm();
+                return;
+            }
 
             if (response.success === 'true' && apiResponse.status === "ok") {
                 setLoading(false);
@@ -211,6 +222,10 @@ const Form = ({ realtorEmail }) => {
                             </label>
                         </div>
                         <div className="mt-5">
+
+                            {errorMsg?.serverEmailError && (
+                                <Alert errorMsg={errorMsg?.serverEmailError} />)}
+
                             {errorMsg.allFieldRequierd && (
                                 <Alert errorMsg={errorMsg.allFieldRequierd} />)}
 

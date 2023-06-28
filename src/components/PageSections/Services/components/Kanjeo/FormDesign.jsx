@@ -99,11 +99,20 @@ const FormDesign = () => {
         contactAccionPanalData?.email
       );
 
-    
+
       /** Api Service */
       const apiResponse = await ContactApiFormServices.addContactForm(formData)
 
-  
+      if (response?.success === 'false') {
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError:
+            'Se necesita activación de email del administrador/a',
+        });
+        setLoading(false);
+        resetForm();
+        return;
+      }
 
       if (response.success === 'true' && apiResponse.status === "ok") {
         setLoading(false);
@@ -134,7 +143,7 @@ const FormDesign = () => {
     }
   };
 
- 
+
 
   return (
     <div className="flex flex-wrap w-[100%] sm:w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] rounded-2xl bg-white shadow-2xl p-4 md:p-6 xl:p-10">
